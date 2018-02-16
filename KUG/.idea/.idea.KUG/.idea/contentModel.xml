@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\enzom\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_KUG.2039545029.00" t="ExcludeRecursive" />
+    <e p="C:\Users\enzom\OneDrive\Bureau\Project\KUG" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="scripts" t="Include">
+          <e p="Appearance.cs" t="Include" />
+          <e p="Controler.cs" t="Include" />
+          <e p="Cook.cs" t="Include" />
+          <e p="Drag_and_drop.cs" t="Include" />
+          <e p="Spawn_aliment.cs" t="Include" />
+        </e>
+      </e>
+      <e p="KUG.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
