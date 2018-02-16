@@ -15,7 +15,6 @@ public class Controler : MonoBehaviour
 	private GameObject Food;
 	private GameObject Table;
 	public Transform Hand;
-	public Transform tom;
 	// Use this for initialization
 	void Start ()
 	{
@@ -33,25 +32,23 @@ public class Controler : MonoBehaviour
 	private void OnTriggerStay(Collider Col)
 	{
 		if (Col.gameObject.tag == "Placard")
+		{
 			is_inside = true;
-		else
-			is_inside = false;
-		
+			Food = Col.gameObject.GetComponent<Spawn_aliment>().Food_inside;
+		}
+
+
 		if (Col.gameObject.tag == "Food")
 		{
 			is_food = true;
 			Food = Col.gameObject;
 		}
-		else
-			is_food = false;
 
-		if (Col.gameObject.tag == "Table")
+		else if (Col.gameObject.tag == "Table")
 		{
 			is_table = true;
 			Table = Col.gameObject;
 		}
-		else
-			is_table = false;
 	}
 
 	
@@ -76,36 +73,67 @@ public class Controler : MonoBehaviour
 			Movment(270, Vector3.zero, Vector3.back, ref dir, transform);
 		t.position += dir * Time.deltaTime * SpeedM;
 		
+		//Prendre un objet d'un placard
 		if (Input.GetKeyDown(KeyCode.Space) && is_inside && !is_taken)
 		{
-			Transform Tom = Instantiate(tom, transform.position, Quaternion.identity);
+			Debug.Log("Prendre objet placard");
+			Transform Tom = Instantiate(Food.transform, transform.position, Quaternion.identity);
 			Tom.GetComponent<Rigidbody>().isKinematic = true;
-			Tom.GetComponent<Collider>().enabled = !tom.GetComponent<Collider>().enabled;
+			Tom.GetComponent<Collider>().enabled = !Food.GetComponent<Collider>().enabled;
 			Tom.parent = t;
 			Tom.position = Hand.position + Vector3.down * 0.9f;
+			Tom.rotation = t.transform.rotation;
 			is_taken = true;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space) && !is_taken && is_food)
+		//Poser un objet sur un plan de travail
+		else if (is_table && is_taken && Input.GetKeyDown(KeyCode.Space) && !Table.GetComponent<Is_food_on>().have_food)
 		{
+			Debug.Log("Poser objet plan de travail");
+			Food.transform.parent = Table.transform;
+			Food.transform.position = Table.transform.position + Vector3.up * 1.2f;
+			Table.GetComponent<Is_food_on>().have_food = true;
+			Table.GetComponent<Is_food_on>().food_on = Food;
+			is_taken = false;
+		}
+		
+		
+		//Prendre un objet sur un plan de travail
+		else if (is_table && !is_taken && Input.GetKeyDown(KeyCode.Space) && Table.GetComponent<Is_food_on>().have_food)
+		{
+			Debug.Log("Prendre objet plan de travail");
+			Food = Table.GetComponent<Is_food_on>().food_on;
+			Food.transform.parent = t;
+			Food.transform.position = Hand.position + Vector3.down * 0.9f;
+			Table.GetComponent<Is_food_on>().have_food = false;
+			Table.GetComponent<Is_food_on>().food_on = null;
+			is_taken = true;
+		}
+		
+		//Ramasser un objet du sol
+		else if (Input.GetKeyDown(KeyCode.Space) && !is_taken && is_food)
+		{
+			Debug.Log("Prendre objet sol");
 			Food.GetComponent<Rigidbody>().isKinematic = true;
 			Food.GetComponent<Collider>().enabled = !Food.GetComponent<Collider>().enabled;
 			Food.transform.parent = t;
 			Food.transform.position = Hand.position + Vector3.down * 0.9f;
 			is_taken = true;
 		}
-
-		if (is_taken && Input.GetKeyDown(KeyCode.Space))
+		
+		//Lacher un objet
+		else if (is_taken && Input.GetKeyDown(KeyCode.Space))
 		{
+			Debug.Log("Lacher objet");
 			Food.GetComponent<Rigidbody>().isKinematic = false;
+			Food.GetComponent<Collider>().enabled = !Food.GetComponent<Collider>().enabled;
 			Food.transform.parent = null;
 			is_taken = false;
 		}
 
-		if (is_table && is_taken && Input.GetKeyDown(KeyCode.Space))
-		{
-			Food.transform.parent = Table.transform;
-			is_taken = false;
-		}
+
+		is_food = false;
+		is_inside = false;
+		is_table = false;
 	}
 }

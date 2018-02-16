@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 33878423959088000}
   - component: {fileID: 135202661736325654}
   - component: {fileID: 23607987951014770}
-  - component: {fileID: 114543614304730194}
   - component: {fileID: 54511591387776808}
   - component: {fileID: 135910504004799694}
   m_Layer: 0
@@ -57,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151040640508650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7456408, y: 1.1193235, z: -0.03304144}
+  m_LocalPosition: {x: 0.7176255, y: 0.47499704, z: 3.6789489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4796566763521138}
@@ -174,18 +173,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114543614304730194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151040640508650}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c525953f04a4ca346853329c2dcf2318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hand: {fileID: 4809954809059888, guid: bf47b46f012633a4f8b9763230d35f3c, type: 2}
 --- !u!135 &135202661736325654
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -220,5 +207,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
