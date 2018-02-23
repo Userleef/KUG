@@ -1208,7 +1208,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedM: 5
   Hand: {fileID: 4809954809059888}
-  tom: {fileID: 4169002690652258, guid: ff5d0f4d88d274e438196bfc967b8b45, type: 2}
 --- !u!135 &135008585976006698
 SphereCollider:
   m_ObjectHideFlags: 1

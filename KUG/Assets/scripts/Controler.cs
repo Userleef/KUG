@@ -79,7 +79,7 @@ public class Controler : MonoBehaviour
 			Debug.Log("Prendre objet placard");
 			Transform Tom = Instantiate(Food.transform, transform.position, Quaternion.identity);
 			Tom.GetComponent<Rigidbody>().isKinematic = true;
-			Tom.GetComponent<Collider>().enabled = !Food.GetComponent<Collider>().enabled;
+			Tom.GetComponent<Collider>().enabled = false;
 			Tom.parent = t;
 			Tom.position = Hand.position + Vector3.down * 0.9f;
 			Tom.rotation = t.transform.rotation;
@@ -115,7 +115,7 @@ public class Controler : MonoBehaviour
 		{
 			Debug.Log("Prendre objet sol");
 			Food.GetComponent<Rigidbody>().isKinematic = true;
-			Food.GetComponent<Collider>().enabled = !Food.GetComponent<Collider>().enabled;
+			Food.GetComponent<Collider>().enabled = false;
 			Food.transform.parent = t;
 			Food.transform.position = Hand.position + Vector3.down * 0.9f;
 			is_taken = true;
@@ -126,7 +126,7 @@ public class Controler : MonoBehaviour
 		{
 			Debug.Log("Lacher objet");
 			Food.GetComponent<Rigidbody>().isKinematic = false;
-			Food.GetComponent<Collider>().enabled = !Food.GetComponent<Collider>().enabled;
+			Food.GetComponent<Collider>().enabled = true;
 			Food.transform.parent = null;
 			is_taken = false;
 		}
