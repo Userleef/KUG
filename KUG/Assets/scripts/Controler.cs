@@ -9,9 +9,10 @@ public class Controler : MonoBehaviour
 	private Transform t;
 	public float SpeedM;
 	private bool is_inside;
-	private bool is_taken = false;
+	private bool is_taken;
 	private bool is_food;
 	private bool is_table;
+	private bool on_floor;
 	private GameObject Food;
 	private GameObject Table;
 	private GameObject Placard;
@@ -32,8 +33,18 @@ public class Controler : MonoBehaviour
 		transform.rotation = Quaternion.Euler(0, angle,0);
 	}
 
+	private void OnCollisionEnter(Collision other)
+	{
+		if (!on_floor)
+		{
+			on_floor = true;
+			t.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+			Debug.Log("Y position freeze");
+		}
+	}
+
 	private void OnTriggerStay(Collider Col)
-	{ 
+	{
 		if (Col.gameObject.tag == "Food")
 		{
 			is_food = true;
