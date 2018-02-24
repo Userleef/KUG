@@ -126,11 +126,12 @@ public class Controler : MonoBehaviour
 			else if (Input.GetKeyDown(KeyCode.Space)&& !is_taken)
 			{
 				Debug.Log("Prendre objet placard");
-				Transform Aliment = Instantiate(Food.transform, transform.position, Quaternion.identity);
+				string food = Food.name;
+				GameObject Aliment = PhotonNetwork.Instantiate(food, transform.position, Quaternion.identity, 0);
 				Aliment.GetComponent<Rigidbody>().isKinematic = true;
 				Aliment.GetComponent<Collider>().enabled = false;
-				Aliment.parent = t;
-				Aliment.position = Hand.position + Vector3.down * 0.9f;
+				Aliment.transform.parent = t;
+				Aliment.transform.position = Hand.position + Vector3.down * 0.9f;
 				is_taken = true;
 				grab_object = Aliment.gameObject;
 			} 
