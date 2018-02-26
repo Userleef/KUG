@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 114942859350807286}
   - component: {fileID: 54708688892087468}
   - component: {fileID: 114082673526525678}
+  - component: {fileID: 114850768215391484}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -1216,12 +1217,23 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 4797194999303796}
+  - {fileID: 114850768215391484}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114850768215391484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733114952722826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd201371f440e448ba6f3d045e2fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114942859350807286
 MonoBehaviour:
   m_ObjectHideFlags: 1

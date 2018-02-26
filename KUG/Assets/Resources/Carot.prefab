@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54036206095467350}
   - component: {fileID: 136945170097530280}
   - component: {fileID: 114012852544555224}
+  - component: {fileID: 114965217542770006}
   m_Layer: 0
   m_Name: Carot
   m_TagString: Food
@@ -376,12 +377,23 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 4956161872862326}
+  - {fileID: 114965217542770006}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114965217542770006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075137126645238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd201371f440e448ba6f3d045e2fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136525244692603380
 CapsuleCollider:
   m_ObjectHideFlags: 1

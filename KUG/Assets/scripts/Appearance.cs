@@ -28,7 +28,7 @@ public class Appearance : MonoBehaviour {
 	{
 		Debug.Log("Joined room");
 		GameObject p = PhotonNetwork.Instantiate("Player 1", Vector3.zero + Vector3.up * 5, Quaternion.identity, 0);
-		p.GetComponent<Controler>().enabled = true;
+		p.GetComponent<Controller>().enabled = true;
 	}
 
 	void OnPhotonRandomJoinFailed()

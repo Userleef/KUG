@@ -135,10 +135,11 @@
         </e>
         <e p="scripts" t="Include">
           <e p="Appearance.cs" t="Include" />
-          <e p="Controler.cs" t="Include" />
+          <e p="Controller.cs" t="Include" />
           <e p="Cook.cs" t="Include" />
           <e p="Is_food_on.cs" t="Include" />
           <e p="Spawn_aliment.cs" t="Include" />
+          <e p="Syncro.cs" t="Include" />
         </e>
       </e>
       <e p="KUG.sln" t="IncludeFlat" />

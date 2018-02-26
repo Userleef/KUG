@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controler : MonoBehaviour
+public class Controller : MonoBehaviour
 {
 	
 	private Transform t;
@@ -33,15 +33,17 @@ public class Controler : MonoBehaviour
 		transform.rotation = Quaternion.Euler(0, angle,0);
 	}
 
-	private void OnCollisionEnter(Collision other)
+	/*private void OnCollisionEnter()
 	{
 		if (!on_floor)
 		{
 			on_floor = true;
-			t.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+			t.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | 
+			                                          RigidbodyConstraints.FreezeRotationX | 
+													  RigidbodyConstraints.FreezeRotationZ;
 			Debug.Log("Y position freeze");
 		}
-	}
+	}*/
 
 	private void OnTriggerStay(Collider Col)
 	{

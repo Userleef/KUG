@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 54511591387776808}
   - component: {fileID: 135910504004799694}
   - component: {fileID: 114817315922355474}
+  - component: {fileID: 114541050635933654}
   m_Layer: 0
   m_Name: Tomato 1
   m_TagString: Food
@@ -174,6 +175,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114541050635933654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151040640508650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd201371f440e448ba6f3d045e2fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114817315922355474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,7 +206,7 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 4169002690652258}
+  - {fileID: 114541050635933654}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

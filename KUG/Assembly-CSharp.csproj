@@ -122,10 +122,11 @@
     <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
     <Compile Include="Assets\scripts\Appearance.cs" />
-    <Compile Include="Assets\scripts\Controler.cs" />
+    <Compile Include="Assets\scripts\Controller.cs" />
     <Compile Include="Assets\scripts\Cook.cs" />
     <Compile Include="Assets\scripts\Is_food_on.cs" />
     <Compile Include="Assets\scripts\Spawn_aliment.cs" />
+    <Compile Include="Assets\scripts\Syncro.cs" />
     <None Include="Assets\Photon Unity Networking\link.xml" />
     <None Include="Assets\Photon Unity Networking\readme.txt" />
     <None Include="Assets\Photon Unity Networking\changelog.txt" />
