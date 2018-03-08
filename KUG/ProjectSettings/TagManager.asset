@@ -8,6 +8,9 @@ TagManager:
   - Food
   - Table
   - Floor
+  - F Tomato
+  - F Carot
+  - Cooking_place
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Is_food_on : MonoBehaviour
+public class Is_food_on : Photon.MonoBehaviour
 {
 
 	public bool have_food = false;

@@ -256,10 +256,10 @@ GameObject:
   - component: {fileID: 33729293704545704}
   - component: {fileID: 136326783262217632}
   - component: {fileID: 23283936048086136}
-  - component: {fileID: 114942859350807286}
   - component: {fileID: 54708688892087468}
   - component: {fileID: 114082673526525678}
   - component: {fileID: 114850768215391484}
+  - component: {fileID: 114199552301101852}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -1223,6 +1223,20 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114199552301101852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733114952722826}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce22829046fc7ca4c982b52e91c8cd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedM: 5
+  Hand: {fileID: 4809954809059888}
+  grab_object: {fileID: 0}
 --- !u!114 &114850768215391484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1234,20 +1248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fd201371f440e448ba6f3d045e2fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114942859350807286
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1733114952722826}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808a3de9c38b033469ed0e250b4119ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpeedM: 5
-  Hand: {fileID: 4809954809059888}
-  grab_object: {fileID: 0}
 --- !u!135 &135008585976006698
 SphereCollider:
   m_ObjectHideFlags: 1

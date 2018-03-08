@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Appearance : MonoBehaviour {
+public class Appearance : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()

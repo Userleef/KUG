@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Syncro : MonoBehaviour
+public class Syncro : Photon.MonoBehaviour
 {
 
 	private Vector3 correctPos;
