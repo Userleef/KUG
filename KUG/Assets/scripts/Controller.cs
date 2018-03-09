@@ -105,24 +105,17 @@ public class Controller : Photon.MonoBehaviour
 			if (is_taken && Input.GetKeyDown(KeyCode.Space) && !Table.GetComponent<Is_food_on>().have_food)
 			{
 				Debug.Log("Poser objet plan de travail");
-				//grab_object.transform.parent = Table.transform;
-				Parent_t(grab_object, Table);
-				grab_object.transform.position = Table.transform.position + Vector3.up * 1.2f;
-				Table.GetComponent<Is_food_on>().have_food = true;
-				Table.GetComponent<Is_food_on>().food_on = grab_object;
-				is_taken = false;
+				int id1 = PhotonNetwork.AllocateViewID();
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("PoserObjetTable", PhotonTargets.AllBuffered, id1);
 			}
 			//Prendre un objet sur un plan de travail
 			else if (!is_taken && Input.GetKeyDown(KeyCode.Space) && Table.GetComponent<Is_food_on>().have_food)
 			{
 				Debug.Log("Prendre objet plan de travail");
-				grab_object = Table.GetComponent<Is_food_on>().food_on;
-				Table.GetComponent<Is_food_on>().have_food = false;
-				Table.GetComponent<Is_food_on>().food_on = null;
-				//grab_object.transform.parent = t;
-				Parent_t(grab_object, t.gameObject);
-				grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
-				is_taken = true;
+				int id1 = PhotonNetwork.AllocateViewID();
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("PrendreObjetTable", PhotonTargets.AllBuffered, id1);
 			}
 
 		}
@@ -132,24 +125,17 @@ public class Controller : Photon.MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.Space) && is_taken && !Placard.GetComponent<Spawn_aliment>().HaveFood)
 			{
 				Debug.Log("Poser objet placard");
-				Placard.GetComponent<Spawn_aliment>().HaveFood = true;
-				Placard.GetComponent<Spawn_aliment>().FoodOn = grab_object;
-				//grab_object.transform.parent = Placard.transform;
-				Parent_t(grab_object, Placard);
-				grab_object.transform.position = Placard.transform.position + Vector3.up * 1.2f;
-				is_taken = false;
+				int id1 = PhotonNetwork.AllocateViewID();
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("PoserObjetPlacard", PhotonTargets.AllBuffered, id1);
 			}
 			//Prendre un objet POSE sur un placard
 			else if (!is_taken && Input.GetKeyDown(KeyCode.Space) && Placard.GetComponent<Spawn_aliment>().HaveFood)
 			{
 				Debug.Log("Prendre objet posé sur un placard");
-				grab_object = Placard.GetComponent<Spawn_aliment>().FoodOn;
-				Placard.GetComponent<Spawn_aliment>().HaveFood = false;
-				Placard.GetComponent<Spawn_aliment>().FoodOn = null;
-				//grab_object.transform.parent = t;
-				Parent_t(grab_object, t.gameObject);
-				grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
-				is_taken = true;
+				int id1 = PhotonNetwork.AllocateViewID();
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("PrendreObjetPosePlacard", PhotonTargets.AllBuffered, id1);
 			}
 			//Prendre un objet d'un placard
 			else if (Input.GetKeyDown(KeyCode.Space) && !is_taken)
@@ -169,37 +155,28 @@ public class Controller : Photon.MonoBehaviour
 			if (!Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) && is_taken)
 			{
 				Debug.Log("Ajouter aliment casserole");
-				Cooking_place.GetComponent<Cook>().Add_aliment(grab_object);
-				//grab_object.transform.parent = null;
-				Parentnull(grab_object);
-				grab_object.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-				grab_object.transform.position = Cooking_place.transform.position + Cooking_place.GetComponent<Cook>()
-					                                 .Slots[Cooking_place.GetComponent<Cook>().aliment_inside.Count - 1];
-				is_taken = false;
-				Cooking_place.GetComponent<Cook>().run_cook();
+				
+				int id1 = PhotonNetwork.AllocateViewID();
+ 
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("Cook", PhotonTargets.AllBuffered, id1);
 			}
 		}
 		//Ramasser un objet du sol
 		else if (Input.GetKeyDown(KeyCode.Space) && !is_taken && is_food)
 		{
 			Debug.Log("Prendre objet sol");
-			Food.GetComponent<Rigidbody>().isKinematic = true;
-			Food.GetComponent<Collider>().enabled = false;
-			//Food.transform.parent = t;
-			Parent_t(Food, t.gameObject);
-			Food.transform.position = Hand.position + Vector3.down * 0.9f;
-			is_taken = true;
-			grab_object = Food;
+			int id1 = PhotonNetwork.AllocateViewID();
+			PhotonView photonView = this.GetComponent<PhotonView>();
+			photonView.RPC("Ramasser", PhotonTargets.AllBuffered,id1);
 		}
 		//Lacher un objet
 		else if (is_taken && Input.GetKeyDown(KeyCode.Space))
 		{
 			Debug.Log("Lacher objet");
-			Food.GetComponent<Rigidbody>().isKinematic = false;
-			Food.GetComponent<Collider>().enabled = true;
-			//Food.transform.parent = null;
-			Parentnull(Food);
-			is_taken = false;
+			int id1 = PhotonNetwork.AllocateViewID();
+			PhotonView photonView = this.GetComponent<PhotonView>();
+			photonView.RPC("Lacher", PhotonTargets.AllBuffered,id1);
 		}
 
 
@@ -217,13 +194,68 @@ public class Controller : Photon.MonoBehaviour
 	}*/
 	
 	[PunRPC]
+	void PoserObjetTable(int id1)
+	{
+		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		grab_object.transform.parent = Table.transform;
+		grab_object.transform.position = Table.transform.position + Vector3.up * 1.2f;
+		Table.GetComponent<Is_food_on>().have_food = true;
+		Table.GetComponent<Is_food_on>().food_on = grab_object;
+		is_taken = false;
+	}
+	
+	[PunRPC]
+	void PrendreObjetTable(int id1)
+	{
+		PhotonView[] nViews = Food.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		grab_object = Table.GetComponent<Is_food_on>().food_on;
+		Table.GetComponent<Is_food_on>().have_food = false;
+		Table.GetComponent<Is_food_on>().food_on = null;
+		grab_object.transform.parent = t;
+		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		is_taken = true;
+	}
+	
+	[PunRPC]
+	void PoserObjetPlacard(int id1)
+	{
+		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		Placard.GetComponent<Spawn_aliment>().HaveFood = true;
+		Placard.GetComponent<Spawn_aliment>().FoodOn = grab_object;
+		grab_object.transform.parent = Placard.transform;
+		grab_object.transform.position = Placard.transform.position + Vector3.up * 1.2f;
+		is_taken = false;
+	}
+
+
+	[PunRPC]
+	void PrendreObjetPosePlacard(int id1)
+	{
+		PhotonView[] nViews = Food.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		grab_object = Placard.GetComponent<Spawn_aliment>().FoodOn;
+		Placard.GetComponent<Spawn_aliment>().HaveFood = false;
+		Placard.GetComponent<Spawn_aliment>().FoodOn = null;
+		grab_object.transform.parent = t;
+		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		is_taken = true;
+	}
+
+	[PunRPC]
 	void PrendreObjetPlacard(Vector3 pos, Quaternion rot, int id1)
 	{
 		Aliment = Instantiate(Food.transform, pos, rot);
- 
 		// Set player's PhotonView
 		PhotonView[] nViews = Aliment.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
+		
 		Aliment.GetComponent<Rigidbody>().isKinematic = true;
 		Aliment.GetComponent<Collider>().enabled = false;
 		Aliment.transform.parent = t;
@@ -232,17 +264,44 @@ public class Controller : Photon.MonoBehaviour
 		is_taken = true;
 		grab_object = Aliment.gameObject;
 	}
-	
+
 	[PunRPC]
-	void Parentnull(GameObject ob)
+	void Cook(int id1)
 	{
-		ob.transform.parent = null;
-	}
-	
-	[PunRPC]
-	void Parent_t(GameObject ob, GameObject sur)
-	{
-		ob.transform.parent = sur.transform;
+		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		Cooking_place.GetComponent<Cook>().Add_aliment(grab_object);
+		grab_object.transform.parent = null;
+		grab_object.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+		grab_object.transform.position = Cooking_place.transform.position + Cooking_place.GetComponent<Cook>().Slots[Cooking_place.GetComponent<Cook>().aliment_inside.Count - 1];
+		is_taken = false;
+		Cooking_place.GetComponent<Cook>().run_cook();
 	}
 
+	[PunRPC]
+	void Ramasser(int id1)
+	{
+		PhotonView[] nViews = Food.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		Food.GetComponent<Rigidbody>().isKinematic = true;
+		Food.GetComponent<Collider>().enabled = false;
+		Food.transform.parent = t;
+		Food.transform.position = Hand.position + Vector3.down * 0.9f;
+		is_taken = true;
+		grab_object = Food;
+	}
+
+	[PunRPC]
+	void Lacher(int id1)
+	{
+		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		Food.GetComponent<Rigidbody>().isKinematic = false;
+		Food.GetComponent<Collider>().enabled = true;
+		Food.transform.parent = null;
+		is_taken = false;
+	}
 }

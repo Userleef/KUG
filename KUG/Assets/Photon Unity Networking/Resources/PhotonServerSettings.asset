@@ -41,4 +41,11 @@ MonoBehaviour:
   - Parentnull
   - SpawnOnNetwork
   - PrendreObjetPlacard
+  - Lacher
+  - PoserObjetTable
+  - Ramasser
+  - PoserObjetPlacard
+  - PrendreObjetPosePlacard
+  - PrendreObjetTable
+  - Cook
   DisableAutoOpenWizard: 1
