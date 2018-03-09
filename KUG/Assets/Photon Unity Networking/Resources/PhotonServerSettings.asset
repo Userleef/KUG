@@ -39,4 +39,6 @@ MonoBehaviour:
   - InstatantiateFood
   - Parent_t
   - Parentnull
+  - SpawnOnNetwork
+  - PrendreObjetPlacard
   DisableAutoOpenWizard: 1

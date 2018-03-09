@@ -21,7 +21,7 @@ public class Controller : Photon.MonoBehaviour
 	private GameObject Cooking_place;
 	public Transform Hand;
 	
-	private GameObject Aliment;
+	private Transform Aliment;
 
 	public GameObject grab_object;
 
@@ -155,16 +155,11 @@ public class Controller : Photon.MonoBehaviour
 			else if (Input.GetKeyDown(KeyCode.Space) && !is_taken)
 			{
 				Debug.Log("Prendre objet placard");
-				string food = Food.name;
-				InstatantiateFood();
-				//GameObject Aliment = PhotonNetwork.Instantiate(food, transform.position, Quaternion.identity, 0);
-				Aliment.GetComponent<Rigidbody>().isKinematic = true;
-				Aliment.GetComponent<Collider>().enabled = false;
-				//Aliment.transform.parent = t;
-				Parent_t(Aliment, t.gameObject);
-				Aliment.transform.position = Hand.position + Vector3.down * 0.9f;
-				is_taken = true;
-				grab_object = Aliment.gameObject;
+				
+				int id1 = PhotonNetwork.AllocateViewID();
+ 
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("PrendreObjetPlacard", PhotonTargets.AllBuffered, transform.position, transform.rotation, id1);
 			}
 
 		}
@@ -215,10 +210,27 @@ public class Controller : Photon.MonoBehaviour
 
 	}
 
-	[PunRPC]
+	/*[PunRPC]
 	void InstatantiateFood()
 	{
 		Aliment = PhotonNetwork.Instantiate(Food.name, transform.position, Quaternion.identity, 0);
+	}*/
+	
+	[PunRPC]
+	void PrendreObjetPlacard(Vector3 pos, Quaternion rot, int id1)
+	{
+		Aliment = Instantiate(Food.transform, pos, rot);
+ 
+		// Set player's PhotonView
+		PhotonView[] nViews = Aliment.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		Aliment.GetComponent<Rigidbody>().isKinematic = true;
+		Aliment.GetComponent<Collider>().enabled = false;
+		Aliment.transform.parent = t;
+		//photonView.RPC("Parent_t",  PhotonTargets.AllBuffered, Aliment.gameObject, t);
+		Aliment.transform.position = Hand.position + Vector3.down * 0.9f;
+		is_taken = true;
+		grab_object = Aliment.gameObject;
 	}
 	
 	[PunRPC]
