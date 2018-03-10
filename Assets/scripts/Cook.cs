@@ -76,7 +76,6 @@ public class Cook : Photon.MonoBehaviour
 	public void Add_aliment(GameObject al)
 	{
 		aliment_inside.Add(al.tag);
-		Debug.Log(al.tag);
 	}
 	
 	public void empty_aliment()
@@ -105,7 +104,6 @@ public class Cook : Photon.MonoBehaviour
 				Debug.Log("Cuisiner une soupe à la Carotte");
 				sauce.GetComponent<Renderer>().material.color = Color.yellow;
 			}
-			empty_aliment();
 		}
 	}
 }

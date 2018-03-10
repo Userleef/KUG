@@ -58,10 +58,10 @@ public class Controller : Photon.MonoBehaviour
 			is_food = true;
 			Food = Col.gameObject;
 		}
-		else if (Col.gameObject.tag == "Table")
+		else if (Col.gameObject.tag == "Cooking_place")
 		{
-			is_table = true;
-			Table = Col.gameObject;
+			is_cook = true;
+			Cooking_place = Col.gameObject;
 		}
 		else if (Col.gameObject.tag == "Placard")
 		{
@@ -69,10 +69,10 @@ public class Controller : Photon.MonoBehaviour
 			Placard = Col.gameObject;
 			Food = Col.gameObject.GetComponent<Spawn_aliment>().Food_inside;
 		}
-		else if (Col.gameObject.tag == "Cooking_place")
+		else if (Col.gameObject.tag == "Table")
 		{
-			is_cook = true;
-			Cooking_place = Col.gameObject;
+			is_table = true;
+			Table = Col.gameObject;
 		}
 	}
 
@@ -99,7 +99,20 @@ public class Controller : Photon.MonoBehaviour
 		t.position += dir * Time.deltaTime * SpeedM;
 
 
-		if (is_table)
+		if (is_cook)
+		{
+			//Ajouter un aliment dans la casserole
+			if (!Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) && is_taken)
+			{
+				Debug.Log("Ajouter aliment casserole");
+				
+				int id1 = PhotonNetwork.AllocateViewID();
+ 
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("Cook", PhotonTargets.AllBuffered, id1);
+			}
+		}
+		else if (is_table)
 		{
 			//Poser un objet sur un plan de travail
 			if (is_taken && Input.GetKeyDown(KeyCode.Space) && !Table.GetComponent<Is_food_on>().have_food)
@@ -148,19 +161,6 @@ public class Controller : Photon.MonoBehaviour
 				photonView.RPC("PrendreObjetPlacard", PhotonTargets.AllBuffered, transform.position, transform.rotation, id1);
 			}
 
-		}
-		else if (is_cook)
-		{
-			//Ajouter un aliment dans la casserole
-			if (!Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) && is_taken)
-			{
-				Debug.Log("Ajouter aliment casserole");
-				
-				int id1 = PhotonNetwork.AllocateViewID();
- 
-				PhotonView photonView = this.GetComponent<PhotonView>();
-				photonView.RPC("Cook", PhotonTargets.AllBuffered, id1);
-			}
 		}
 		//Ramasser un objet du sol
 		else if (Input.GetKeyDown(KeyCode.Space) && !is_taken && is_food)
