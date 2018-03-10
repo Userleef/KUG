@@ -5,6 +5,8 @@ Assets/scenes/menu_fr.unity
 Assets/scenes/menu_play_en.unity
 Assets/scenes/menu_play_fr.unity
 Assets/scenes/scene_test.unity
+Assets/scenes/menu_niveau.unity
+Assets/scenes/menu_level.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PunTeams
 4d0187d1ee26ceba125a106f0dde0360 Assembly-CSharp.dll:.SmoothSyncMovement
