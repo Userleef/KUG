@@ -24,7 +24,7 @@
       <file leaf-file-name="Controller.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/Controller.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
+            <state relative-caret-position="5372">
               <caret line="320" column="31" lean-forward="false" selection-start-line="320" selection-start-column="31" selection-end-line="320" selection-end-column="31" />
               <folding>
                 <marker date="1520770546463" expanded="false" signature="6:122" ph="..." />
@@ -71,16 +71,31 @@
       <file leaf-file-name="Appearance.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/Appearance.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="29" column="92" lean-forward="false" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
+            <state relative-caret-position="402">
+              <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
               <folding>
-                <marker date="1520776590408" expanded="false" signature="6:78" ph="..." />
-                <marker date="1520776590408" expanded="true" signature="127:888" ph="{...}" />
-                <marker date="1520776590408" expanded="true" signature="176:264" ph="{...}" />
-                <marker date="1520776590408" expanded="true" signature="268:465" ph="/* Update is called once per frame ... */" />
-                <marker date="1520776590408" expanded="true" signature="488:557" ph="{...}" />
-                <marker date="1520776590408" expanded="true" signature="580:775" ph="{...}" />
-                <marker date="1520776590408" expanded="true" signature="809:886" ph="{...}" />
+                <marker date="1520781398226" expanded="false" signature="6:78" ph="..." />
+                <marker date="1520781398226" expanded="true" signature="126:922" ph="{...}" />
+                <marker date="1520781398226" expanded="true" signature="208:296" ph="{...}" />
+                <marker date="1520781398226" expanded="true" signature="300:497" ph="/* Update is called once per frame ... */" />
+                <marker date="1520781398226" expanded="true" signature="520:589" ph="{...}" />
+                <marker date="1520781398226" expanded="true" signature="612:809" ph="{...}" />
+                <marker date="1520781398226" expanded="true" signature="843:920" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="musique.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/musique.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <marker date="1520780783755" expanded="true" signature="6:44" ph="..." />
+                <marker date="1520780783755" expanded="true" signature="83:351" ph="{...}" />
+                <marker date="1520780783755" expanded="true" signature="132:287" ph="{...}" />
+                <marker date="1520780783755" expanded="true" signature="342:349" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -156,6 +171,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Photon Unity Networking/Plugins/PhotonNetwork/NetworkingPeer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Syncro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Cook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/musique.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Is_food_on.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Spawn_aliment.cs" root0="FORCE_HIGHLIGHTING" />
@@ -173,11 +189,11 @@
         <option value="$PROJECT_DIR$/Assets/scripts/Syncro.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Is_food_on.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Spawn_aliment.cs" />
-        <option value="$PROJECT_DIR$/Assets/scripts/musique.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Cook.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Is_food_on_cutting_place.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/PAUSE.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/musique.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Appearance.cs" />
       </list>
     </option>
@@ -210,7 +226,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -224,6 +239,7 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,11 +305,12 @@
       <workItem from="1520728586168" duration="432000" />
       <workItem from="1520771683427" duration="2206000" />
       <workItem from="1520775095205" duration="1436000" />
+      <workItem from="1520777138753" duration="4097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90197000" />
+    <option name="totallyTimeSpent" value="94294000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -518,7 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/musique.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/scripts/instantiate_music.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Cook.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -575,7 +591,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Controller.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
+        <state relative-caret-position="5372">
           <caret line="320" column="31" lean-forward="false" selection-start-line="320" selection-start-column="31" selection-end-line="320" selection-end-column="31" />
           <folding>
             <marker date="1520770546463" expanded="false" signature="6:122" ph="..." />
@@ -618,18 +634,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/musique.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1520780783755" expanded="true" signature="6:44" ph="..." />
+            <marker date="1520780783755" expanded="true" signature="83:351" ph="{...}" />
+            <marker date="1520780783755" expanded="true" signature="132:287" ph="{...}" />
+            <marker date="1520780783755" expanded="true" signature="342:349" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Appearance.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="92" lean-forward="false" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
+        <state relative-caret-position="402">
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding>
-            <marker date="1520776590408" expanded="false" signature="6:78" ph="..." />
-            <marker date="1520776590408" expanded="true" signature="127:888" ph="{...}" />
-            <marker date="1520776590408" expanded="true" signature="176:264" ph="{...}" />
-            <marker date="1520776590408" expanded="true" signature="268:465" ph="/* Update is called once per frame ... */" />
-            <marker date="1520776590408" expanded="true" signature="488:557" ph="{...}" />
-            <marker date="1520776590408" expanded="true" signature="580:775" ph="{...}" />
-            <marker date="1520776590408" expanded="true" signature="809:886" ph="{...}" />
+            <marker date="1520781398226" expanded="false" signature="6:78" ph="..." />
+            <marker date="1520781398226" expanded="true" signature="126:922" ph="{...}" />
+            <marker date="1520781398226" expanded="true" signature="208:296" ph="{...}" />
+            <marker date="1520781398226" expanded="true" signature="300:497" ph="/* Update is called once per frame ... */" />
+            <marker date="1520781398226" expanded="true" signature="520:589" ph="{...}" />
+            <marker date="1520781398226" expanded="true" signature="612:809" ph="{...}" />
+            <marker date="1520781398226" expanded="true" signature="843:920" ph="{...}" />
           </folding>
         </state>
       </provider>

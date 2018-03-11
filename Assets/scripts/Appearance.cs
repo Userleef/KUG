@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Appearance : Photon.MonoBehaviour {
+public class Appearance : Photon.MonoBehaviour
+{
 
+	public Vector3 spawn_position;
 	// Use this for initialization
 	void Start ()
 	{
@@ -27,7 +29,7 @@ public class Appearance : Photon.MonoBehaviour {
 	void OnJoinedRoom()
 	{
 		Debug.Log("Joined room");
-		GameObject p = PhotonNetwork.Instantiate("Player 1", Vector3.zero + Vector3.up * 1.2f, Quaternion.identity, 0);
+		GameObject p = PhotonNetwork.Instantiate("Player 1", spawn_position + Vector3.up * 1.2f, Quaternion.identity, 0);
 		p.GetComponent<Controller>().enabled = true;
 	}
 

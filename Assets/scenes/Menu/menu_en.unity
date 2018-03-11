@@ -483,11 +483,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 546326127}
-  - component: {fileID: 546326126}
   - component: {fileID: 546326125}
+  - component: {fileID: 546326126}
   m_Layer: 0
   m_Name: musique
-  m_TagString: Untagged
+  m_TagString: Musique
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,7 +559,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 546326124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc0812563285bc42b0518d7fa4b14cf, type: 3}
+  m_Script: {fileID: 11500000, guid: be28599ccee012f49af9a9ce1f624883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &546326127
