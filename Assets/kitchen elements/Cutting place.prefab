@@ -93,10 +93,10 @@ GameObject:
   - component: {fileID: 65113513726001160}
   - component: {fileID: 65323953977244350}
   - component: {fileID: 23731966800716164}
-  - component: {fileID: 114155620049764514}
+  - component: {fileID: 114193419957439222}
   m_Layer: 0
   m_Name: Cutting place
-  m_TagString: Table
+  m_TagString: Cutting_place
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1290,7 +1290,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114155620049764514
+--- !u!114 &114193419957439222
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1298,8 +1298,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1363230211733894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44073250defa7f84e9dd9932bb16c492, type: 3}
+  m_Script: {fileID: 11500000, guid: 690a4a2af0679ee4c9e3f8228310a6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   have_food: 0
   food_on: {fileID: 0}
+  Cutting_Tomato: {fileID: 1964304386180816, guid: 171e486c8178b384fbb68a30470b7c25,
+    type: 2}
+  Cutting_Carot: {fileID: 1744952749037894, guid: 9f00297a160c8e84eabe88b1a673eac3,
+    type: 2}

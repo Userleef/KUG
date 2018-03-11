@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Table
+  - Placard
+  - F Tomato
+  - Cooking_place
+  - F Carot
+  - Cutting_place
+  - FC Tomato
   layers:
   - Default
   - TransparentFX

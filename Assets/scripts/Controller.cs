@@ -14,11 +14,13 @@ public class Controller : Photon.MonoBehaviour
 	private bool is_food;
 	private bool is_table;
 	private bool is_cook;
+	private bool is_cutting;
 	private bool on_floor;
 	private GameObject Food;
 	private GameObject Table;
 	private GameObject Placard;
 	private GameObject Cooking_place;
+	private GameObject Cutting_place;
 	public Transform Hand;
 	
 	private Transform Aliment;
@@ -69,6 +71,11 @@ public class Controller : Photon.MonoBehaviour
 			Placard = Col.gameObject;
 			Food = Col.gameObject.GetComponent<Spawn_aliment>().Food_inside;
 		}
+		else if (Col.gameObject.tag == "Cutting_place")
+		{
+			is_cutting = true;
+			Cutting_place = Col.gameObject;
+		}
 		else if (Col.gameObject.tag == "Table")
 		{
 			is_table = true;
@@ -102,7 +109,7 @@ public class Controller : Photon.MonoBehaviour
 		if (is_cook)
 		{
 			//Ajouter un aliment dans la casserole
-			if (!Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) && is_taken)
+			if (!Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) && is_taken && grab_object.tag[0] == 'F' && grab_object.tag[1] == 'C')
 			{
 				Debug.Log("Ajouter aliment casserole");
 				
@@ -110,6 +117,25 @@ public class Controller : Photon.MonoBehaviour
  
 				PhotonView photonView = this.GetComponent<PhotonView>();
 				photonView.RPC("Cook", PhotonTargets.AllBuffered, id1);
+			}
+		}
+		else if (is_cutting)
+		{
+			//poser un objet sur planche à découper
+			if (is_taken && Input.GetKeyDown(KeyCode.Space) && !Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food)
+			{
+				Debug.Log("Poser objet cutting place");
+				int id1 = PhotonNetwork.AllocateViewID();
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("PoserObjetCuttingPlace", PhotonTargets.AllBuffered, id1);
+			}
+			//Prendre un objet sur planche à découper
+			else if (!is_taken && Input.GetKeyDown(KeyCode.Space) && Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food)
+			{
+				Debug.Log("Prendre objet plan de travail");
+				int id1 = PhotonNetwork.AllocateViewID();
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("PrendreObjetCuttingPlace", PhotonTargets.AllBuffered, id1);
 			}
 		}
 		else if (is_table)
@@ -184,14 +210,37 @@ public class Controller : Photon.MonoBehaviour
 		is_placard = false;
 		is_table = false;
 		is_cook = false;
-
+		is_cutting = false;
 	}
 
-	/*[PunRPC]
-	void InstatantiateFood()
+	
+	[PunRPC]
+	void PoserObjetCuttingPlace(int id1)
 	{
-		Aliment = PhotonNetwork.Instantiate(Food.name, transform.position, Quaternion.identity, 0);
-	}*/
+		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		grab_object.transform.parent = Cutting_place.transform;
+		grab_object.transform.position = Cutting_place.transform.position + Vector3.up * 1.2f;
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food = true;
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on = grab_object;
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().CutAliment();
+		is_taken = false;
+	}
+	
+	[PunRPC]
+	void PrendreObjetCuttingPlace(int id1)
+	{
+		PhotonView[] nViews = Food.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		grab_object = Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on;
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food = false;
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on = null;
+		grab_object.transform.parent = t;
+		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		is_taken = true;
+	}
 	
 	[PunRPC]
 	void PoserObjetTable(int id1)

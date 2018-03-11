@@ -48,4 +48,7 @@ MonoBehaviour:
   - PrendreObjetPosePlacard
   - PrendreObjetTable
   - Cook
+  - PoserObjetCuttinPlace
+  - PoserObjetCuttingPlace
+  - PrendreObjetCuttingPlace
   DisableAutoOpenWizard: 1
