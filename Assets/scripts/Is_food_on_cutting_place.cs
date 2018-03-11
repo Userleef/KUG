@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+//using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class Is_food_on_cutting_place : Photon.MonoBehaviour
@@ -36,14 +37,12 @@ public class Is_food_on_cutting_place : Photon.MonoBehaviour
 			Aliment_a_couper = Cutting_Carot;
 		}
 		
-		Destroy(food_on);
-
-		//Quaternion rot = new Quaternion(gameObject.GetComponent<Transform>().rotation.x - 15f, gameObject.GetComponent<Transform>().rotation.y, gameObject.GetComponent<Transform>().rotation.z, 0f);
-		Transform cutting_aliment = PhotonView.Instantiate(Aliment_a_couper.transform, gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().rotation);
-		food_on = cutting_aliment.gameObject;
-		have_food = true;
+		food_on.SetActive(false);
 		
-			
+		Transform cutting_aliment = PhotonView.Instantiate(Aliment_a_couper.transform, gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().rotation);
+		
+		food_on = cutting_aliment.gameObject;
+		
 		cutting_aliment.transform.parent = gameObject.GetComponent<Transform>();
 		if(gameObject.GetComponent<Transform>().rotation == Quaternion.Euler(0f,-90,0f))
 			cutting_aliment.transform.position = gameObject.GetComponent<Transform>().position + Vector3.up * 0.9f + Vector3.right * 0.3f;
@@ -53,5 +52,6 @@ public class Is_food_on_cutting_place : Photon.MonoBehaviour
 			cutting_aliment.transform.position = gameObject.GetComponent<Transform>().position + Vector3.up * 0.9f + Vector3.left * 0.3f;
 		if(gameObject.GetComponent<Transform>().rotation == Quaternion.Euler(0f,180,0f))
 			cutting_aliment.transform.position = gameObject.GetComponent<Transform>().position + Vector3.up * 0.9f + Vector3.forward * 0.3f;
+		
 	}
 }

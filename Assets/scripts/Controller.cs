@@ -137,6 +137,14 @@ public class Controller : Photon.MonoBehaviour
 				PhotonView photonView = this.GetComponent<PhotonView>();
 				photonView.RPC("PrendreObjetCuttingPlace", PhotonTargets.AllBuffered, id1);
 			}
+			//Couper un objet sur planche à découper
+			if (!is_taken && Input.GetKeyDown(KeyCode.E) && Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food && Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on.tag[1] == ' ')
+			{
+				Debug.Log("Couper objet cutting place");
+				int id1 = PhotonNetwork.AllocateViewID();
+				PhotonView photonView = this.GetComponent<PhotonView>();
+				photonView.RPC("Couper", PhotonTargets.AllBuffered, id1);
+			}
 		}
 		else if (is_table)
 		{
@@ -224,7 +232,6 @@ public class Controller : Photon.MonoBehaviour
 		grab_object.transform.position = Cutting_place.transform.position + Vector3.up * 1.2f;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food = true;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on = grab_object;
-		Cutting_place.GetComponent<Is_food_on_cutting_place>().CutAliment();
 		is_taken = false;
 	}
 	
@@ -237,9 +244,19 @@ public class Controller : Photon.MonoBehaviour
 		grab_object = Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food = false;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on = null;
+		grab_object.GetComponent<Collider>().enabled = false;
 		grab_object.transform.parent = t;
 		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
 		is_taken = true;
+	}
+	
+	[PunRPC]
+	void Couper(int id1)
+	{
+		PhotonView[] nViews = Food.GetComponentsInChildren<PhotonView>(); 
+		nViews[0].viewID = id1;
+		
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().CutAliment();
 	}
 	
 	[PunRPC]
@@ -322,7 +339,7 @@ public class Controller : Photon.MonoBehaviour
 		
 		Cooking_place.GetComponent<Cook>().Add_aliment(grab_object);
 		grab_object.transform.parent = null;
-		grab_object.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+		//grab_object.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 		grab_object.transform.position = Cooking_place.transform.position + Cooking_place.GetComponent<Cook>().Slots[Cooking_place.GetComponent<Cook>().aliment_inside.Count - 1];
 		is_taken = false;
 		Cooking_place.GetComponent<Cook>().run_cook();
@@ -348,9 +365,9 @@ public class Controller : Photon.MonoBehaviour
 		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
 		
-		Food.GetComponent<Rigidbody>().isKinematic = false;
-		Food.GetComponent<Collider>().enabled = true;
-		Food.transform.parent = null;
+		grab_object.GetComponent<Rigidbody>().isKinematic = false;
+		grab_object.GetComponent<Collider>().enabled = true;
+		grab_object.transform.parent = null;
 		is_taken = false;
 	}
 }

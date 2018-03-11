@@ -35,7 +35,7 @@ public class Appearance : Photon.MonoBehaviour
 
 	void OnPhotonRandomJoinFailed()
 	{
-		Debug.Log("Ransom join failed");
+		Debug.Log("Random join failed");
 		PhotonNetwork.CreateRoom("room");
 	}
 }

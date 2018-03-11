@@ -20,8 +20,8 @@ public class Cook : Photon.MonoBehaviour
 	    Slots[1] = new Vector3(0f, 1.8f, 0.3f);
 	    Slots[2] = new Vector3(-0.3f, 1.8f, 0f);
 	    
-	    recette_Tomato3 = new List<string>{"F Tomato","F Tomato","F Tomato"};
-	    recette_Carot3 = new List<string>{"F Carot","F Carot","F Carot"};
+	    recette_Tomato3 = new List<string>{"FC Tomato","FC Tomato","FC Tomato"};
+	    recette_Carot3 = new List<string>{"FC Carot","FC Carot","FC Carot"};
     }
 	
 	// Update is called once per frame

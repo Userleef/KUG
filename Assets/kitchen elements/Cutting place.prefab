@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   have_food: 0
   food_on: {fileID: 0}
-  Cutting_Tomato: {fileID: 1964304386180816, guid: 171e486c8178b384fbb68a30470b7c25,
+  Cutting_Tomato: {fileID: 1353974352865938, guid: 171e486c8178b384fbb68a30470b7c25,
     type: 2}
-  Cutting_Carot: {fileID: 1744952749037894, guid: 9f00297a160c8e84eabe88b1a673eac3,
+  Cutting_Carot: {fileID: 1530386512356226, guid: 9f00297a160c8e84eabe88b1a673eac3,
     type: 2}
