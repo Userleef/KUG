@@ -106,7 +106,15 @@ public class Controller : Photon.MonoBehaviour
 		t.position += dir * Time.deltaTime * SpeedM;
 
 
-		if (is_cook)
+		//Ramasser un objet du sol
+		if (Input.GetKeyDown(KeyCode.Space) && !is_taken && is_food && Food.transform.parent == null)
+		{
+			Debug.Log("Prendre objet sol");
+			int id1 = PhotonNetwork.AllocateViewID();
+			PhotonView photonView = this.GetComponent<PhotonView>();
+			photonView.RPC("Ramasser", PhotonTargets.AllBuffered,id1);
+		}
+		else if (is_cook)
 		{
 			//Ajouter un aliment dans la casserole
 			if (!Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) && is_taken && grab_object.tag[0] == 'F' && grab_object.tag[1] == 'C')
@@ -132,7 +140,7 @@ public class Controller : Photon.MonoBehaviour
 			//Prendre un objet sur planche à découper
 			else if (!is_taken && Input.GetKeyDown(KeyCode.Space) && Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food)
 			{
-				Debug.Log("Prendre objet plan de travail");
+				Debug.Log("Prendre objet planche à découper");
 				int id1 = PhotonNetwork.AllocateViewID();
 				PhotonView photonView = this.GetComponent<PhotonView>();
 				photonView.RPC("PrendreObjetCuttingPlace", PhotonTargets.AllBuffered, id1);
@@ -195,14 +203,6 @@ public class Controller : Photon.MonoBehaviour
 				photonView.RPC("PrendreObjetPlacard", PhotonTargets.AllBuffered, transform.position, transform.rotation, id1);
 			}
 
-		}
-		//Ramasser un objet du sol
-		else if (Input.GetKeyDown(KeyCode.Space) && !is_taken && is_food)
-		{
-			Debug.Log("Prendre objet sol");
-			int id1 = PhotonNetwork.AllocateViewID();
-			PhotonView photonView = this.GetComponent<PhotonView>();
-			photonView.RPC("Ramasser", PhotonTargets.AllBuffered,id1);
 		}
 		//Lacher un objet
 		else if (is_taken && Input.GetKeyDown(KeyCode.Space))
@@ -338,7 +338,7 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 		
 		Cooking_place.GetComponent<Cook>().Add_aliment(grab_object);
-		grab_object.transform.parent = null;
+		grab_object.transform.parent = Cooking_place.transform;
 		//grab_object.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 		grab_object.transform.position = Cooking_place.transform.position + Cooking_place.GetComponent<Cook>().Slots[Cooking_place.GetComponent<Cook>().aliment_inside.Count - 1];
 		is_taken = false;

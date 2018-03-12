@@ -1,11 +1,16 @@
 fileFormatVersion: 2
 guid: 690a4a2af0679ee4c9e3f8228310a6ed
-timeCreated: 1518800298
+timeCreated: 1520846447
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - food_on: {instanceID: 0}
+  - Cutting_Tomato: {fileID: 1353974352865938, guid: 171e486c8178b384fbb68a30470b7c25,
+      type: 2}
+  - Cutting_Carot: {fileID: 1530386512356226, guid: 9f00297a160c8e84eabe88b1a673eac3,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
