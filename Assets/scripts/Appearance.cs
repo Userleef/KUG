@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Appearance : Photon.MonoBehaviour
 {
-
 	public Vector3 spawn_position;
 	// Use this for initialization
 	void Start ()

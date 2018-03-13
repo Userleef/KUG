@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 99861dadc4e28744f85bbf8833858cf0
+timeCreated: 1520901749
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - slot1: {instanceID: 0}
+  - slot2: {instanceID: 0}
+  - slot3: {instanceID: 0}
+  - material_fond_casserole: {fileID: 2100000, guid: 090d690f9aef6a845a29dc8c25e4331d,
+      type: 2}
+  - sauce: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

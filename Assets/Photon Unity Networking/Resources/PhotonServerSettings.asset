@@ -52,4 +52,9 @@ MonoBehaviour:
   - PoserObjetCuttingPlace
   - PrendreObjetCuttingPlace
   - Couper
+  - PrendreMarmitte
+  - PoserMarmitteFour
+  - RemplirAssiette
+  - RemplirAssietteEnMain
+  - RemplirAssietteEnMainFour
   DisableAutoOpenWizard: 1
