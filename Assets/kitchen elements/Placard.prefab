@@ -60,6 +60,8 @@ GameObject:
   - component: {fileID: 23050507041019246}
   - component: {fileID: 65528365495600850}
   - component: {fileID: 114503848795472570}
+  - component: {fileID: 114213279684561758}
+  - component: {fileID: 114624145451705574}
   m_Layer: 0
   m_Name: Placard
   m_TagString: Placard
@@ -279,6 +281,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114213279684561758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776637922909328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 3
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114624145451705574}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 0
+  instantiationId: -1
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!114 &114503848795472570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,3 +320,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Food_inside: {fileID: 1151040640508650, guid: ff5d0f4d88d274e438196bfc967b8b45,
     type: 2}
+--- !u!114 &114624145451705574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776637922909328}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd201371f440e448ba6f3d045e2fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

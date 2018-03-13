@@ -57,4 +57,5 @@ MonoBehaviour:
   - RemplirAssiette
   - RemplirAssietteEnMain
   - RemplirAssietteEnMainFour
+  - Collider
   DisableAutoOpenWizard: 1

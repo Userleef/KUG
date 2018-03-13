@@ -25,6 +25,8 @@ public class Controller : Photon.MonoBehaviour
 	
 	private Transform Aliment;
 
+	private Collider Col;
+
 	public GameObject grab_object;
 
 	// Use this for initialization
@@ -283,9 +285,11 @@ public class Controller : Photon.MonoBehaviour
 	[PunRPC]
 	void PrendreObjetCuttingPlace(int id1)
 	{
-		PhotonView[] nViews = Food.GetComponentsInChildren<PhotonView>(); 
+		PhotonView[] nViews = Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
 		
+		
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on.GetComponent<Syncro>().enabled = true;
 		grab_object = Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food = false;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on = null;
@@ -300,7 +304,8 @@ public class Controller : Photon.MonoBehaviour
 	{
 		PhotonView[] nViews = Food.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
-		
+
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on.GetComponent<Syncro>().enabled = true;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().CutAliment();
 	}
 	

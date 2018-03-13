@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 23674887796643128}
   - component: {fileID: 65875107076788808}
   - component: {fileID: 114263140311539182}
+  - component: {fileID: 114352016799914134}
+  - component: {fileID: 114025455121602888}
   m_Layer: 0
   m_Name: Cooking place
   m_TagString: Cooking_place
@@ -951,6 +953,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: -0.5, y: 0, z: 0}
+--- !u!114 &114025455121602888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424062146309416}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd201371f440e448ba6f3d045e2fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114161355607076398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -983,6 +996,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marmitte: {fileID: 1465015696293562}
+--- !u!114 &114352016799914134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424062146309416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 3
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114025455121602888}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 0
+  instantiationId: -1
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!114 &114590478894890410
 MonoBehaviour:
   m_ObjectHideFlags: 1
