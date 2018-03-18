@@ -8,6 +8,8 @@ public class Assiette : MonoBehaviour
 	public GameObject sauce_assiette;
 	public bool is_full;
 	public List<string> recette_inside;
+	public bool Is_clean = true;
+	public Material sale;
 
 	// Use this for initialization
 	void Start () {
@@ -17,5 +19,25 @@ public class Assiette : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void empty_assiette()
+	{
+		is_full = false;
+		sauce_assiette.SetActive(false);
+	}
+
+	public void rendre_assiette()
+	{
+		is_full = false;
+		Is_clean = false;
+		sauce_assiette.GetComponent<MeshRenderer>().material = sale;
+	}
+
+	public void Clean()
+	{
+		Is_clean = true;
+		sauce_assiette.GetComponent<MeshRenderer>().material = null;
+		sauce_assiette.SetActive(false);
 	}
 }

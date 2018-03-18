@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 //using NUnit.Framework.Constraints;
 using UnityEngine;
 
@@ -18,6 +19,9 @@ public class Cooking_Pot : MonoBehaviour
 	public List<string> recette_Carot3;
 
 	public GameObject sauce;
+
+	private Color Couleur_carotte;
+	private Color Couleur_inconnue;
 	
 	// Use this for initializatio
 	void Start ()
@@ -26,6 +30,11 @@ public class Cooking_Pot : MonoBehaviour
 	    
 		recette_Tomato3 = new List<string>{"FC Tomato","FC Tomato","FC Tomato"};
 		recette_Carot3 = new List<string>{"FC Carot","FC Carot","FC Carot"};
+		
+		//Couleur_carotte = new Color(236,84,2,255);
+		Couleur_carotte = Color.yellow;
+		//Couleur_inconnue = new Color(150,113,85,255);
+		Couleur_inconnue = Color.grey;
 	}
 	
 	// Update is called once per frame
@@ -47,9 +56,9 @@ public class Cooking_Pot : MonoBehaviour
 		if(al.tag == "FC Tomato")
 			return UnityEngine.Color.red;
 		if(al.tag == "FC Carot")
-			return UnityEngine.Color.yellow;
+			return Couleur_carotte;
 		
-		return UnityEngine.Color.white;
+		return Couleur_inconnue;
 	}
 	
 	public void Add_aliment(GameObject al)
@@ -128,10 +137,15 @@ public class Cooking_Pot : MonoBehaviour
 				Debug.Log("Cuisiner une soupe à la tomate");
 				sauce.GetComponent<Renderer>().material.color = Color.red;
 			}
-			else if (IsTheSame(aliment_inside,recette_Carot3))
+			else if (IsTheSame(aliment_inside, recette_Carot3))
 			{
 				Debug.Log("Cuisiner une soupe à la Carotte");
-				sauce.GetComponent<Renderer>().material.color = Color.yellow;
+				sauce.GetComponent<Renderer>().material.color = Couleur_carotte;
+			}
+			else
+			{
+				Debug.Log("Cuisiner une recette inconnue");
+				sauce.GetComponent<Renderer>().material.color = Couleur_inconnue;
 			}
 		}
 	}

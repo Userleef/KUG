@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: e8853f96c323a5945bdaaa0435c796f9
-timeCreated: 1520909431
+timeCreated: 1521310377
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sauce_assiette: {instanceID: 0}
+  - sale: {fileID: 2100000, guid: 6b28a41bf0e4421449df7381e14136fd, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -58,4 +58,10 @@ MonoBehaviour:
   - RemplirAssietteEnMain
   - RemplirAssietteEnMainFour
   - Collider
+  - JeterAssiette
+  - JeterMarmitte
+  - JeterAliment
+  - RendreAssiette
+  - PrendreAssietteRendu
+  - LaverAssiette
   DisableAutoOpenWizard: 1

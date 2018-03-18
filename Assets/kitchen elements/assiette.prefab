@@ -383,8 +383,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354791115996626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.961, z: 0}
-  m_LocalScale: {x: 2.2, y: 0.1, z: 1.9999}
+  m_LocalPosition: {x: -0.05, y: 0.961, z: 0}
+  m_LocalScale: {x: 2.1, y: 0.1, z: 1.9999}
   m_Children: []
   m_Father: {fileID: 4155447890837106}
   m_RootOrder: 9
@@ -1128,6 +1128,8 @@ MonoBehaviour:
   sauce_assiette: {fileID: 1252981820622674}
   is_full: 0
   recette_inside: []
+  Is_clean: 1
+  sale: {fileID: 2100000, guid: 6b28a41bf0e4421449df7381e14136fd, type: 2}
 --- !u!114 &114394839545452400
 MonoBehaviour:
   m_ObjectHideFlags: 1
