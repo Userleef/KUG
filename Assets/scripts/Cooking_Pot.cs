@@ -22,6 +22,7 @@ public class Cooking_Pot : MonoBehaviour
 
 	private Color Couleur_carotte;
 	private Color Couleur_inconnue;
+	private float TimerCook = 10;
 	
 	// Use this for initializatio
 	void Start ()
@@ -39,6 +40,8 @@ public class Cooking_Pot : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+		if(TimerCook > 0 && aliment_inside.Count > 0)
+			TimerCook -= Time.deltaTime;
 	}
 	
 	
@@ -66,6 +69,17 @@ public class Cooking_Pot : MonoBehaviour
 		aliment_inside.Add(al.tag);
 		al.SetActive(false);
 		DefineSlot(aliment_inside).GetComponent<Renderer>().material.color = DefineColor(al);
+		
+		Debug.Log(aliment_inside.Count);
+
+		//if (aliment_inside.Count == 0)
+			TimerCook = 10;
+		/*else
+		{
+			TimerCook += 5;
+			if (TimerCook > 10)
+				TimerCook = 10;
+		}*/
 	}
 	
 	public bool Is_full()
@@ -127,12 +141,26 @@ public class Cooking_Pot : MonoBehaviour
 		return L;
 	}
 
-	
+	private void OnGUI()
+	{
+		if (aliment_inside.Count > 0)
+		{
+			if (TimerCook > 0)
+			{
+				GUI.Label(new Rect(200, 100, 200, 100), "" + (int) TimerCook, new GUIStyle());
+			}
+			else
+			{
+				run_cook();
+			}
+		}
+	}
+
 	public void run_cook()
 	{
 		if (aliment_inside.Count == 3)
 		{
-			if (IsTheSame(aliment_inside,recette_Tomato3))
+			if (IsTheSame(aliment_inside, recette_Tomato3))
 			{
 				Debug.Log("Cuisiner une soupe à la tomate");
 				sauce.GetComponent<Renderer>().material.color = Color.red;
@@ -147,6 +175,7 @@ public class Cooking_Pot : MonoBehaviour
 				Debug.Log("Cuisiner une recette inconnue");
 				sauce.GetComponent<Renderer>().material.color = Couleur_inconnue;
 			}
+			
 		}
 	}
 	

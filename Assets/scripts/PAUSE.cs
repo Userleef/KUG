@@ -5,10 +5,10 @@ using UnityEngine;
 public class PAUSE : MonoBehaviour
 {
 	public GameObject menuObject;
-	private bool isActive = false;
+	private bool isActive;
 	
 	void Update () {
-		if (isActive == true)
+		if (isActive )
 		{
 			menuObject.SetActive(true);
 			Cursor.visible = true;

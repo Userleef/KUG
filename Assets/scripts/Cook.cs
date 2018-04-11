@@ -31,8 +31,4 @@ public class Cook : Photon.MonoBehaviour
 		return marmitte.GetComponent<Cooking_Pot>().Is_full();
 	}
 
-	public void run_cook()
-	{
-		marmitte.GetComponent<Cooking_Pot>().run_cook();
-	}
 }

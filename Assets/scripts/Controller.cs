@@ -546,7 +546,6 @@ public class Controller : Photon.MonoBehaviour
 		Cooking_place.GetComponent<Cook>().Add_aliment(grab_object);
 		grab_object.transform.parent = Cooking_place.transform;
 		is_taken = false;
-		Cooking_place.GetComponent<Cook>().run_cook();
 	}
 	
 	[PunRPC]
