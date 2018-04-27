@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 //using NUnit.Framework.Constraints;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cooking_Pot : MonoBehaviour
 {
 	
 	public List<string> aliment_inside;
+
+	public bool On_Cooking_Place = true;
 	
 	public Transform slot1;
 	public Transform slot2;
@@ -23,6 +27,10 @@ public class Cooking_Pot : MonoBehaviour
 	private Color Couleur_carotte;
 	private Color Couleur_inconnue;
 	private float TimerCook = 10;
+
+	public Canvas TimeBar;
+	public Image timeBarGreen;
+	public Image timeBarRed;
 	
 	// Use this for initializatio
 	void Start ()
@@ -40,7 +48,7 @@ public class Cooking_Pot : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		if(TimerCook > 0 && aliment_inside.Count > 0)
+		if(TimerCook > -6 && aliment_inside.Count > 0 && On_Cooking_Place)
 			TimerCook -= Time.deltaTime;
 	}
 	
@@ -68,6 +76,7 @@ public class Cooking_Pot : MonoBehaviour
 	{
 		aliment_inside.Add(al.tag);
 		al.SetActive(false);
+		DefineSlot(aliment_inside).SetActive(true);
 		DefineSlot(aliment_inside).GetComponent<Renderer>().material.color = DefineColor(al);
 		
 		Debug.Log(aliment_inside.Count);
@@ -91,11 +100,13 @@ public class Cooking_Pot : MonoBehaviour
 	
 	public void empty_aliment()
 	{
+		TimeBar.gameObject.SetActive(false);
 		aliment_inside = new List<string>();
-		slot1.GetComponent<Renderer>().material.color = Color.white;
-		slot2.GetComponent<Renderer>().material.color = Color.white;
-		slot3.GetComponent<Renderer>().material.color = Color.white;
+		slot1.gameObject.SetActive(false);
+		slot2.gameObject.SetActive(false);
+		slot3.gameObject.SetActive(false);
 		sauce.GetComponent<Renderer>().material = material_fond_casserole;
+		sauce.tag = "Untagged";
 	}
 	
 	public bool IsTheSame(List<string> L1, List<string> L2)
@@ -145,21 +156,46 @@ public class Cooking_Pot : MonoBehaviour
 	{
 		if (aliment_inside.Count > 0)
 		{
-			if (TimerCook > 0)
+			if (timeBarRed.fillAmount < 1)
 			{
-				GUI.Label(new Rect(200, 100, 200, 100), "" + (int) TimerCook, new GUIStyle());
+				if (TimerCook > 0)
+				{
+					
+					TimeBar.gameObject.SetActive(true);
+					timeBarGreen.fillAmount = TimerCook / 10.0f;
+					timeBarRed.fillAmount = 0;
+				}
 			}
-			else
+			if (TimerCook < 0 && TimerCook > -5)
+				timeBarRed.fillAmount = Math.Abs(TimerCook / 5.0f);
+			else if (TimerCook < 0.1 && TimerCook > 0)
 			{
 				run_cook();
 			}
+			else if (TimerCook < -4.9 && TimerCook > -5.1)
+			{
+				BurnCook();
+			}
 		}
+	}
+
+	public void BurnCook()
+	{
+		slot1.gameObject.SetActive(false);
+		slot2.gameObject.SetActive(false);
+		slot3.gameObject.SetActive(false);
+		sauce.GetComponent<Renderer>().material.color = Color.magenta;
+		sauce.tag = "Burned";
+		TimeBar.gameObject.SetActive(false);
 	}
 
 	public void run_cook()
 	{
 		if (aliment_inside.Count == 3)
 		{
+			slot1.gameObject.SetActive(false);
+			slot2.gameObject.SetActive(false);
+			slot3.gameObject.SetActive(false);
 			if (IsTheSame(aliment_inside, recette_Tomato3))
 			{
 				Debug.Log("Cuisiner une soupe à la tomate");

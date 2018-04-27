@@ -76,8 +76,6 @@ GameObject:
   - component: {fileID: 33845861124488708}
   - component: {fileID: 65486949393627128}
   - component: {fileID: 23624996287734342}
-  - component: {fileID: 65818749132257896}
-  - component: {fileID: 65628374741316968}
   m_Layer: 0
   m_Name: Poubelle
   m_TagString: poubelle
@@ -583,18 +581,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65628374741316968
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1689390751230582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 0.5}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!65 &65777788101450026
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -607,18 +593,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65818749132257896
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1689390751230582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 3, z: 2}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!65 &65888405940127696
 BoxCollider:
   m_ObjectHideFlags: 1

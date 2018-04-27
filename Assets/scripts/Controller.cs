@@ -10,24 +10,24 @@ public class Controller : Photon.MonoBehaviour
 	private Transform t;
 	
 	public float SpeedM = 5;
-	private bool is_placard;
-	private bool is_taken;
-	private bool is_food;
-	private bool is_table;
-	private bool is_cook;
-	private bool is_cutting;
-	private bool on_floor;
-	private bool is_poubelle;
-	private bool is_rendu;
+	public bool is_placard;
+	public bool is_taken;
+	public bool is_food;
+	public bool is_table;
+	public bool is_cook;
+	public bool is_cutting;
+	public bool on_floor;
+	public bool is_poubelle;
+	public bool is_rendu;
 	public bool is_lavabo;
 	
-	private GameObject Food;
-	private GameObject Table;
-	private GameObject Placard;
-	private GameObject Cooking_place;
-	private GameObject Cutting_place;
-	private GameObject Rendu;
-	private GameObject Lavabo;
+	public GameObject Food;
+	public GameObject Table;
+	public GameObject Placard;
+	public GameObject Cooking_place;
+	public GameObject Cutting_place;
+	public GameObject Rendu;
+	public GameObject Lavabo;
 	
 	public Transform Hand;
 	private Transform Aliment;
@@ -62,53 +62,9 @@ public class Controller : Photon.MonoBehaviour
 		}
 	}*/
 
-	private void OnTriggerStay(Collider Col)
-	{
-		if (Col.gameObject.tag[0] == 'F' || Col.gameObject.name == "Casserole" || Col.gameObject.tag == "assiette")
-		{
-			is_food = true;
-			Food = Col.gameObject;
-		}
-		else if (Col.gameObject.tag == "Cooking_place")
-		{
-			is_cook = true;
-			Cooking_place = Col.gameObject;
-		}
-		else if (Col.gameObject.tag == "Placard")
-		{
-			is_placard = true;
-			Placard = Col.gameObject;
-			Food = Col.gameObject.GetComponent<Spawn_aliment>().Food_inside;
-		}
-		else if (Col.gameObject.tag == "Cutting_place")
-		{
-			is_cutting = true;
-			Cutting_place = Col.gameObject;
-		}
-		else if (Col.gameObject.tag == "Table")
-		{
-			is_table = true;
-			Table = Col.gameObject;
-		}
-		else if (Col.gameObject.tag == "poubelle")
-		{
-			is_poubelle = true;
-		}
-		else if (Col.gameObject.tag == "rendu")
-		{
-			is_rendu = true;
-			Rendu = Col.gameObject;
-		}
-		else if (Col.gameObject.tag == "lavabo")
-		{
-			is_lavabo = true;
-			Lavabo = Col.gameObject;
-		}
-	}
-
-
 	void Update()
 	{
+		
 		Vector3 dir = Vector3.zero;
 		if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.S))
 			Movment(315, Vector3.left, Vector3.back, ref dir, transform);
@@ -161,7 +117,7 @@ public class Controller : Photon.MonoBehaviour
 			}
 			//Ajouter un aliment dans la casserole
 			else if (Cooking_place.GetComponent<Cook>().marmitte != null && !Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) 
-			                                                  && is_taken && grab_object.tag[0] == 'F' && grab_object.tag[1] == 'C' )
+			                                                  && is_taken && grab_object.tag[0] == 'F' && grab_object.tag[1] == 'C' && Cooking_place.GetComponent<Cook>().marmitte.GetComponent<Cooking_Pot>().sauce.tag != "Burned" )
 			{
 				Debug.Log("Ajouter aliment casserole");
 				
@@ -171,7 +127,9 @@ public class Controller : Photon.MonoBehaviour
 				photonView.RPC("Cook", PhotonTargets.AllBuffered, id1);
 			}
 			//Remplir assiette en main
-			else if (is_taken && grab_object.tag == "assiette" && Cooking_place.GetComponent<Cook>().marmitte != null && Cooking_place.GetComponent<Cook>().marmitte.GetComponent<Cooking_Pot>().Is_full() && Input.GetKeyDown(KeyCode.Space) && Cooking_place.GetComponent<Cook>().marmitte.name == "Casserole" && !grab_object.GetComponent<Assiette>().is_full && grab_object.GetComponent<Assiette>().Is_clean)
+			else if (is_taken && grab_object.tag == "assiette" && Cooking_place.GetComponent<Cook>().marmitte != null && Cooking_place.GetComponent<Cook>().marmitte.GetComponent<Cooking_Pot>().Is_full() && Input.GetKeyDown(KeyCode.Space) 
+			         && Cooking_place.GetComponent<Cook>().marmitte.name == "Casserole" && !grab_object.GetComponent<Assiette>().is_full && grab_object.GetComponent<Assiette>().Is_clean 
+			         && Cooking_place.GetComponent<Cook>().marmitte.GetComponent<Cooking_Pot>().sauce.tag != "Burned")
 			{
 				Debug.Log("Remplir une assiette en main");
 				int id1 = PhotonNetwork.AllocateViewID();
@@ -190,7 +148,7 @@ public class Controller : Photon.MonoBehaviour
 				photonView.RPC("PoserObjetCuttingPlace", PhotonTargets.AllBuffered, id1);
 			}
 			//Prendre un objet sur planche à découper
-			else if (!is_taken && Input.GetKeyDown(KeyCode.Space) && Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food)
+			else if (!is_taken && Input.GetKeyDown(KeyCode.Space) && Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food && !Cutting_place.GetComponent<Is_food_on_cutting_place>().is_cutting)
 			{
 				Debug.Log("Prendre objet planche à découper");
 				int id1 = PhotonNetwork.AllocateViewID();
@@ -225,7 +183,7 @@ public class Controller : Photon.MonoBehaviour
 				photonView.RPC("PrendreObjetTable", PhotonTargets.AllBuffered, id1);
 			}
 			//Remplir assiette
-			else if (is_taken &&  Input.GetKeyDown(KeyCode.Space) && Table.GetComponent<Is_food_on>().have_food && grab_object.name == "Casserole" && grab_object.GetComponent<Cooking_Pot>().Is_full() && Table.GetComponent<Is_food_on>().food_on.tag == "assiette" && !Table.GetComponent<Is_food_on>().food_on.GetComponent<Assiette>().is_full && Table.GetComponent<Is_food_on>().food_on.GetComponent<Assiette>().Is_clean)
+			else if (is_taken &&  Input.GetKeyDown(KeyCode.Space) && Table.GetComponent<Is_food_on>().have_food && grab_object.name == "Casserole" && grab_object.GetComponent<Cooking_Pot>().Is_full() && Table.GetComponent<Is_food_on>().food_on.tag == "assiette" && !Table.GetComponent<Is_food_on>().food_on.GetComponent<Assiette>().is_full && Table.GetComponent<Is_food_on>().food_on.GetComponent<Assiette>().Is_clean && grab_object.GetComponent<Cooking_Pot>().sauce.tag != "Burned")
 			{
 				Debug.Log("Remplir une assiette");
 				int id1 = PhotonNetwork.AllocateViewID();
@@ -233,7 +191,7 @@ public class Controller : Photon.MonoBehaviour
 				photonView.RPC("RemplirAssiette", PhotonTargets.AllBuffered, id1 );
 			}
 			//Remplir assiette en main
-			else if (is_taken && Input.GetKeyDown(KeyCode.Space) && grab_object.tag == "assiette" && Table.GetComponent<Is_food_on>().have_food && Table.GetComponent<Is_food_on>().food_on.name == "Casserole" && Table.GetComponent<Is_food_on>().food_on.GetComponent<Cooking_Pot>().Is_full()  && !grab_object.GetComponent<Assiette>().is_full &&  grab_object.GetComponent<Assiette>().Is_clean)
+			else if (is_taken && Input.GetKeyDown(KeyCode.Space) && grab_object.tag == "assiette" && Table.GetComponent<Is_food_on>().have_food && Table.GetComponent<Is_food_on>().food_on.name == "Casserole" && Table.GetComponent<Is_food_on>().food_on.GetComponent<Cooking_Pot>().Is_full()  && !grab_object.GetComponent<Assiette>().is_full &&  grab_object.GetComponent<Assiette>().Is_clean && Table.GetComponent<Is_food_on>().food_on.GetComponent<Cooking_Pot>().sauce.tag != "Burned")
 			{
 				Debug.Log("Remplir une assiette en main");
 				int id1 = PhotonNetwork.AllocateViewID();
@@ -406,7 +364,7 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on.GetComponent<Syncro>().enabled = true;
-		Cutting_place.GetComponent<Is_food_on_cutting_place>().CutAliment();
+		Cutting_place.GetComponent<Is_food_on_cutting_place>().Run_Cut();
 	}
 	
 	[PunRPC]
@@ -554,6 +512,7 @@ public class Controller : Photon.MonoBehaviour
 		PhotonView[] nViews = Cooking_place.GetComponent<Cook>().marmitte.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
 		
+		Cooking_place.GetComponent<Cook>().marmitte.GetComponent<Cooking_Pot>().On_Cooking_Place = false;
 		grab_object = Cooking_place.GetComponent<Cook>().marmitte.gameObject;
 		grab_object.GetComponent<Syncro>().enabled = true;
 		Cooking_place.GetComponent<Cook>().marmitte = null;
@@ -568,7 +527,8 @@ public class Controller : Photon.MonoBehaviour
 	{
 		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
-		
+
+		grab_object.GetComponent<Cooking_Pot>().On_Cooking_Place = true;
 		Cooking_place.GetComponent<Cook>().marmitte = grab_object;
 		grab_object.transform.parent = Cooking_place.transform;
 		grab_object.transform.position = Cooking_place.transform.position + Vector3.up * 1.2f;
@@ -582,7 +542,6 @@ public class Controller : Photon.MonoBehaviour
 		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
 
-		grab_object.GetComponent<Assiette>().empty_assiette();
 		grab_object.GetComponent<Assiette>().Clean();
 	}
 	
@@ -641,7 +600,7 @@ public class Controller : Photon.MonoBehaviour
 		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
 
-		grab_object.GetComponent<Assiette>().Clean();
+		Lavabo.GetComponent<Lavabo>().Run_Wash();
 	}
 
 	[PunRPC]

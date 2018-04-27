@@ -11,6 +11,7 @@ public class Assiette : MonoBehaviour
 	public bool Is_clean = true;
 	public Material sale;
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +19,6 @@ public class Assiette : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	public void empty_assiette()
@@ -33,11 +33,13 @@ public class Assiette : MonoBehaviour
 		Is_clean = false;
 		sauce_assiette.GetComponent<MeshRenderer>().material = sale;
 	}
-
+	
+	
 	public void Clean()
 	{
-		Is_clean = true;
-		sauce_assiette.GetComponent<MeshRenderer>().material = null;
-		sauce_assiette.SetActive(false);
+		is_full = false;
+		Is_clean = false;
+		sauce_assiette.GetComponent<MeshRenderer>().material = sale;
 	}
+	
 }

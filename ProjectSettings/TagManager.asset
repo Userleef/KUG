@@ -17,6 +17,8 @@ TagManager:
   - lavabo
   - poubelle
   - rendu
+  - Burned
+  - Target
   layers:
   - Default
   - TransparentFX
