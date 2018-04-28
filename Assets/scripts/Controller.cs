@@ -578,6 +578,7 @@ public class Controller : Photon.MonoBehaviour
 		Rendu.GetComponent<Is_food_on>().food_on = grab_object;
 		is_taken = false;
 		Rendu.GetComponent<Is_food_on>().food_on.GetComponent<Assiette>().rendre_assiette();
+		Rendu.GetComponent<Deliver_Command>().Deliver();
 	}
 	
 	[PunRPC]

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\sdwas\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_KUG.2002507615.00" t="ExcludeRecursive" />
-    <e p="C:\Users\sdwas\OneDrive\Documents\GitHub\KUG\KUG" t="IncludeRecursive">
+    <e p="C:\Users\sdwas\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_KUG.-1426749541.00" t="ExcludeRecursive" />
+    <e p="C:\Users\sdwas\Desktop\KUG" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -135,15 +135,19 @@
         </e>
         <e p="scripts" t="Include">
           <e p="Appearance.cs" t="Include" />
-          <e p="assiette.cs" t="Include" />
+          <e p="Assiette.cs" t="Include" />
           <e p="change_scene.cs" t="Include" />
+          <e p="Command_Gestion.cs" t="Include" />
           <e p="Controller.cs" t="Include" />
           <e p="Cook.cs" t="Include" />
           <e p="Cooking_Pot.cs" t="Include" />
           <e p="Countdown.cs" t="Include" />
+          <e p="Deliver_Command.cs" t="Include" />
+          <e p="Generate_Command.cs" t="Include" />
           <e p="Is_food_on.cs" t="Include" />
           <e p="Is_food_on_cutting_place.cs" t="Include" />
           <e p="Lavabo.cs" t="Include" />
+          <e p="Music_LVL.cs" t="Include" />
           <e p="musique.cs" t="Include" />
           <e p="PAUSE.cs" t="Include" />
           <e p="Spawn_aliment.cs" t="Include" />
