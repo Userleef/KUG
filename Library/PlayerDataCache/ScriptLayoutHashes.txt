@@ -11,6 +11,12 @@ Assets/scenes/Niveaux/Niveau 1.unity
 Assets/scenes/Niveaux/Niveau 2.unity
 Assets/scenes/Niveaux/Niveau 3.unity
 Assets/scenes/Niveaux/Niveau 4.unity
+Assets/scenes/Story/1.unity
+Assets/scenes/Story/2.unity
+Assets/scenes/Story/3.unity
+Assets/scenes/Story/4.unity
+Assets/scenes/Story/5.unity
+Assets/scenes/Story/6.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PunTeams
 4d0187d1ee26ceba125a106f0dde0360 Assembly-CSharp.dll:.SmoothSyncMovement
@@ -34,6 +40,7 @@ b027659a510ae8d01d6d5f31baf9827a Assembly-CSharp.dll:.PhotonStatsGui
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:ExitGames.UtilityScripts.ButtonInsideScrollList
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.NetworkCullingHandler
 32af0f6eaee85f68d62a3ef78fc25fe3 Assembly-CSharp.dll:.Spawn_aliment
+50032f8a1e8afaaa1eeb94f7e2b1215e Assembly-CSharp.dll:.Deliver_Command
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:ExitGames.UtilityScripts.PlayerRoomIndexing
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -151,7 +158,9 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 ada54cb428213a7e0c4b986e95788f97 Assembly-CSharp.dll:.PhotonTransformView
 8f215ac0acd6ff3e89cd81cfc2b08d92 Assembly-CSharp.dll:.Appearance
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Music_LVL
 c0ad1fb5d400aa83cb257e5f6c3714cf Assembly-CSharp.dll:.OnClickDestroy
+c9d31cd499dca005074d28347fe1e498 Assembly-CSharp.dll:.Generate_Command
 30c6237931168f8b4c2f10a656a47aa8 Assembly-CSharp.dll:.PickupItem
 b9efe2a0d1c9ba7bc46e66a07a897115 Assembly-CSharp.dll:.ServerSettings
 e3db0de06ede87e84b88d4a2079f2b57 Assembly-CSharp.dll:ExitGames.UtilityScripts.TextButtonTransition
@@ -195,8 +204,8 @@ ec0082b40adf3b0930cd87250ffdbf1d Assembly-CSharp.dll:.SupportLogger
 a9d88284ad65a4796b88708b41e6e113 Assembly-CSharp.dll:.Cooking_Pot
 d1755adc44fcb9e44c42a5889d35f7a0 Assembly-CSharp.dll:.MoveByKeys
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.QuitOnEscapeOrBack
+4d2503532ab6846593dc5f03441bb627 Assembly-CSharp.dll:.Command_Gestion
 031d22109929dfc12f3b1ee35fe75b38 Assembly-CSharp.dll:.Countdown
 604f5f55c1cc414f64da1990b36ff015 Assembly-CSharp.dll:.PhotonView
 b2dc25029b6f083ffbbdf9df269f825a Assembly-CSharp.dll:.InRoomChat
 f8e18f37b6c87571e0668ebd69a1019f Assembly-CSharp.dll:.Cook
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Score
