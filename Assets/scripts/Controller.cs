@@ -16,7 +16,6 @@ public class Controller : Photon.MonoBehaviour
 	public bool is_table;
 	public bool is_cook;
 	public bool is_cutting;
-	public bool on_floor;
 	public bool is_poubelle;
 	public bool is_rendu;
 	public bool is_lavabo;
@@ -49,18 +48,6 @@ public class Controller : Photon.MonoBehaviour
 		dir = v1 + v2;
 		transform.rotation = Quaternion.Euler(0, angle, 0);
 	}
-
-	/*private void OnCollisionEnter()
-	{
-		if (!on_floor)
-		{
-			on_floor = true;
-			t.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | 
-			                                          RigidbodyConstraints.FreezeRotationX | 
-													  RigidbodyConstraints.FreezeRotationZ;
-			Debug.Log("Y position freeze");
-		}
-	}*/
 
 	void Update()
 	{
@@ -374,7 +361,10 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 		
 		grab_object.transform.parent = Table.transform;
-		grab_object.transform.position = Table.transform.position + Vector3.up * 1.2f;
+		if (grab_object.tag == "assiette")
+			grab_object.transform.position = Table.transform.position + Vector3.up * 0.75f;
+		else
+			grab_object.transform.position = Table.transform.position + Vector3.up * 1.2f;
 		Table.GetComponent<Is_food_on>().have_food = true;
 		Table.GetComponent<Is_food_on>().food_on = grab_object;
 		is_taken = false;
@@ -459,7 +449,10 @@ public class Controller : Photon.MonoBehaviour
 		Placard.GetComponent<Spawn_aliment>().HaveFood = true;
 		Placard.GetComponent<Spawn_aliment>().FoodOn = grab_object;
 		grab_object.transform.parent = Placard.transform;
-		grab_object.transform.position = Placard.transform.position + Vector3.up * 1.2f;
+		if (grab_object.tag == "assiette")
+			grab_object.transform.position = Placard.transform.position + Vector3.up * 0.75f;
+		else
+			grab_object.transform.position = Placard.transform.position + Vector3.up * 1.2f;
 		is_taken = false;
 	}
 
@@ -573,7 +566,7 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 
 		grab_object.transform.parent = Rendu.transform;
-		grab_object.transform.position = Rendu.transform.position + Vector3.up * 1.2f;
+		grab_object.transform.position = Rendu.transform.position + Vector3.up * 0.75f;
 		Rendu.GetComponent<Is_food_on>().have_food = true;
 		Rendu.GetComponent<Is_food_on>().food_on = grab_object;
 		is_taken = false;

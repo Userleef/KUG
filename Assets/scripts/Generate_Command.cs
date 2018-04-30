@@ -25,21 +25,8 @@ public class Generate_Command : MonoBehaviour
 
 	public List<string> recette_commande = new List<string>();
 	
-	/*public List<string> recette_Carot2tomateVS2;
-	public List<string> recette_Tomates2carotVS2;
-	
-	public List<string> recette_Carot2tomateVS3;
-	public List<string> recette_Tomates2carotVS3;*/
-	
 	// Use this for initialization
 	void Start () {
-		/*Debug.Log(recette_Carot3.Count);
-		recette_Carot2tomate = new List<string>{"FC Carot","FC Carot","FC Tomato"};
-		recette_Tomates2carot = new List<string>{"FC Tomato","FC Tomato","FC Carot"};
-		recette_Tomato3 = new List<string>{"FC Tomato","FC Tomato","FC Tomato"};
-		recette_Carot3 = new List<string>{"FC Carot","FC Carot","FC Carot"};
-		
-		Debug.Log(recette_Carot3.Count);*/
 	}
 	
 	// Update is called once per frame
@@ -50,7 +37,7 @@ public class Generate_Command : MonoBehaviour
 
 	public void Validate_Commande()
 	{
-		MainCamera.GetComponent<Command_Gestion>().Score += 10;
+		MainCamera.GetComponent<Command_Gestion>().Score += 30;
 		MainCamera.GetComponent<Command_Gestion>().Update_Score();
 		kill_command();
 	}
@@ -73,34 +60,12 @@ public class Generate_Command : MonoBehaviour
 		{
 			if (MainCamera.GetComponent<Command_Gestion>().Score >= 5)
 			{
-				MainCamera.GetComponent<Command_Gestion>().Score -= 5;
+				MainCamera.GetComponent<Command_Gestion>().Score -= 10;
 				MainCamera.GetComponent<Command_Gestion>().Update_Score();
 			}
 			kill_command();
 		}
 	}
-	
-	/*public List<string> Sort(List<string> L)
-	{
-		bool sorted = false;
-
-		while (!sorted)
-		{
-			sorted = true;
-			for (int i = 1; i < L.Count; i++)
-			{
-				if (L[i][3] > L[i - 1][3])
-				{
-					sorted = false;
-					string cur = L[i];
-					L[i] = L[i - 1];
-					L[i - 1] = cur;
-				}
-			}
-		}
-
-		return L;
-	}*/
 	public bool IsTheSame(List<string> L1, List<string> L2)
 	{
 		int L1Size = L1.Count;
@@ -111,8 +76,6 @@ public class Generate_Command : MonoBehaviour
 		
 		L1.Sort();
 		L2.Sort();
-		//L1 = Sort(L1);
-		//L2 = Sort(L2);
 		
 		for (int i = 0; i < L1Size; i++)
 		{

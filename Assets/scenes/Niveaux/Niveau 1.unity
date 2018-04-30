@@ -1031,7 +1031,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11, y: 1, z: 1}
+  m_Size: {x: 12, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &297561174
 MeshFilter:
@@ -1780,7 +1780,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13, y: 1, z: 1}
+  m_Size: {x: 14, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &509247389
 MeshFilter:
@@ -2737,7 +2737,7 @@ Prefab:
     - target: {fileID: 65155692820630428, guid: be52c02320183ce4991c60d2715fa4a2,
         type: 2}
       propertyPath: m_Size.x
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be52c02320183ce4991c60d2715fa4a2, type: 2}
@@ -7020,7 +7020,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11, y: 1, z: 1}
+  m_Size: {x: 12, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1776740195
 MeshFilter:

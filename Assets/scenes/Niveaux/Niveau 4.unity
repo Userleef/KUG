@@ -3352,7 +3352,7 @@ MonoBehaviour:
     type: 3}
   platvide: {fileID: 2800000, guid: dbf3bf81665f786478d5b179fe983151, type: 3}
   Timer_Command: 100
-  Intervalle: 100
+  Intervalle: 200
   timeBarGreen: {fileID: 814891584}
   recette_commande: []
 --- !u!1 &638157513

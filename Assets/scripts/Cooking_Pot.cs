@@ -158,27 +158,6 @@ public class Cooking_Pot : MonoBehaviour
 		return true;
 	}
 
-	/*public List<string> Sort(List<string> L)
-	{
-		bool sorted = false;
-
-		while (!sorted)
-		{
-			sorted = true;
-			for (int i = 1; i < L.Count; i++)
-			{
-				if (L[i][3] > L[i - 1][3])
-				{
-					sorted = false;
-					string cur = L[i];
-					L[i] = L[i - 1];
-					L[i - 1] = cur;
-				}
-			}
-		}
-
-		return L;
-	}*/
 
 	private void OnGUI()
 	{
