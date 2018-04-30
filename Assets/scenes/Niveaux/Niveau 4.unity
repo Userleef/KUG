@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -475,6 +475,13 @@ MonoBehaviour:
   Slot_ingredient1: {fileID: 1063749229}
   Slot_ingredient2: {fileID: 1016823556}
   Slot_ingredient3: {fileID: 2062022012}
+  platImage: {fileID: 1108873651}
+  platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
+  platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
+  plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
+    type: 3}
+  platvide: {fileID: 2800000, guid: dbf3bf81665f786478d5b179fe983151, type: 3}
   Timer_Command: 100
   Intervalle: 100
   timeBarGreen: {fileID: 1367533341}
@@ -3337,6 +3344,13 @@ MonoBehaviour:
   Slot_ingredient1: {fileID: 478202192}
   Slot_ingredient2: {fileID: 1335966029}
   Slot_ingredient3: {fileID: 889090461}
+  platImage: {fileID: 2137813050}
+  platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
+  platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
+  plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
+    type: 3}
+  platvide: {fileID: 2800000, guid: dbf3bf81665f786478d5b179fe983151, type: 3}
   Timer_Command: 100
   Intervalle: 100
   timeBarGreen: {fileID: 814891584}
@@ -5158,6 +5172,13 @@ MonoBehaviour:
   Slot_ingredient1: {fileID: 1129473560}
   Slot_ingredient2: {fileID: 2117262087}
   Slot_ingredient3: {fileID: 1809837270}
+  platImage: {fileID: 757930482}
+  platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
+  platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
+  plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
+    type: 3}
+  platvide: {fileID: 2800000, guid: dbf3bf81665f786478d5b179fe983151, type: 3}
   Timer_Command: 100
   Intervalle: 100
   timeBarGreen: {fileID: 1835991786}
@@ -6164,6 +6185,13 @@ MonoBehaviour:
   Slot_ingredient1: {fileID: 495781475}
   Slot_ingredient2: {fileID: 2119889607}
   Slot_ingredient3: {fileID: 1306643086}
+  platImage: {fileID: 133960641}
+  platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
+  platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
+  plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
+    type: 3}
+  platvide: {fileID: 2800000, guid: dbf3bf81665f786478d5b179fe983151, type: 3}
   Timer_Command: 100
   Intervalle: 100
   timeBarGreen: {fileID: 566380894}
@@ -8717,6 +8745,22 @@ MonoBehaviour:
   Ingredient1: {fileID: 2800000, guid: 481d730dc01058f448cfce2786fc4af1, type: 3}
   Ingredient2: {fileID: 2800000, guid: 2d8e731aa64945f43b4ddd8a5e95057b, type: 3}
   Ingredient3: {fileID: 0}
+  recette_Tomato3:
+  - FC Tomato
+  - FC Tomato
+  - FC Tomato
+  recette_Carot3:
+  - FC Carot
+  - FC Carot
+  - FC Carot
+  recette_Carot2tomate:
+  - FC Carot
+  - FC Carot
+  - FC Tomato
+  recette_Tomates2carot:
+  - FC Tomato
+  - FC Tomato
+  - FC Carot
   Ingr: []
 --- !u!1 &1967231832
 GameObject:

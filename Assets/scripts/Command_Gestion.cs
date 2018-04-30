@@ -22,6 +22,11 @@ public class Command_Gestion : MonoBehaviour
 	public Texture Ingredient1;
 	public Texture Ingredient2;
 	public Texture Ingredient3;
+	
+	public List<string> recette_Tomato3 = new List<string>{"FC Tomato","FC Tomato","FC Tomato"};
+	public List<string> recette_Carot3 = new List<string>{"FC Carot","FC Carot","FC Carot"};
+	public List<string> recette_Carot2tomate = new List<string> {"FC Carot", "FC Carot", "FC Tomato"};
+	public List<string> recette_Tomates2carot = new List<string>{"FC Tomato","FC Tomato","FC Carot"};
 
 	public List<Texture> Ingr;
 	

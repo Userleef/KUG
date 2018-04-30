@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Cooking_Pot : MonoBehaviour
 {
 	
+	
 	public List<string> aliment_inside;
 
 	public bool On_Cooking_Place = true;
@@ -21,11 +22,24 @@ public class Cooking_Pot : MonoBehaviour
 	
 	public List<string> recette_Tomato3;
 	public List<string> recette_Carot3;
+	
+	public List<string> recette_Carot2tomate;
+	public List<string> recette_Tomates2carot;
+	
+	/*public List<string> recette_Carot2tomateVS2;
+	public List<string> recette_Tomates2carotVS2;
+	
+	public List<string> recette_Carot2tomateVS3;
+	public List<string> recette_Tomates2carotVS3;*/
+	
 
 	public GameObject sauce;
 
+	private Color Couleur_tomates;
 	private Color Couleur_carotte;
-	private Color Couleur_inconnue;
+	private Color Couleur_inconnue = new Color();
+	private Color CouleurCarot2tomato;
+	private Color CouleurTomato2Carot;
 	private float TimerCook = 10;
 
 	public Canvas TimeBar;
@@ -36,14 +50,29 @@ public class Cooking_Pot : MonoBehaviour
 	void Start ()
 	{
 		aliment_inside = new List<string>();
-	    
+		
+		//Couleur recette full tomates
+		ColorUtility.TryParseHtmlString("#FF0000", out Couleur_tomates);
 		recette_Tomato3 = new List<string>{"FC Tomato","FC Tomato","FC Tomato"};
+		
+		//Couleur recette full carottes
+		ColorUtility.TryParseHtmlString("#DC7633", out Couleur_carotte);
 		recette_Carot3 = new List<string>{"FC Carot","FC Carot","FC Carot"};
 		
-		//Couleur_carotte = new Color(236,84,2,255);
-		Couleur_carotte = Color.yellow;
-		//Couleur_inconnue = new Color(150,113,85,255);
-		Couleur_inconnue = Color.grey;
+		//couleur recette inconnue
+		ColorUtility.TryParseHtmlString("#409AA4", out Couleur_inconnue);
+		
+		//couleur recette 2 carottes et 1 tomate
+		ColorUtility.TryParseHtmlString("#FB5430", out CouleurCarot2tomato);
+		recette_Carot2tomate = new List<string>{"FC Carot","FC Carot","FC Tomato"};
+		//recette_Carot2tomateVS2 = new List<string>{"FC Carot","FC Tomato","FC Carot"};
+		//recette_Carot2tomateVS3 = new List<string>{"FC Tomato","FC Carot","FC Carot"};
+		
+		//couleur recette 2 tomates et 1 carotte
+		ColorUtility.TryParseHtmlString("#B62607", out CouleurTomato2Carot);
+		recette_Tomates2carot = new List<string>{"FC Tomato","FC Tomato","FC Carot"};
+		//recette_Tomates2carotVS2 = new List<string>{"FC Tomato","FC Carot","FC Tomato"};
+		//recette_Tomates2carotVS3 = new List<string>{"FC Carot","FC Tomato","FC Tomato"};
 	}
 	
 	// Update is called once per frame
@@ -65,10 +94,9 @@ public class Cooking_Pot : MonoBehaviour
 	private Color DefineColor(GameObject al)
 	{
 		if(al.tag == "FC Tomato")
-			return UnityEngine.Color.red;
+			return Couleur_tomates;
 		if(al.tag == "FC Carot")
 			return Couleur_carotte;
-		
 		return Couleur_inconnue;
 	}
 	
@@ -117,8 +145,8 @@ public class Cooking_Pot : MonoBehaviour
 			return false;
 		}
 		
-		L1 = Sort(L1);
-		L2 = Sort(L2);
+		L1.Sort();
+		L2.Sort();
 		
 		for (int i = 0; i < L1Size; i++)
 		{
@@ -130,7 +158,7 @@ public class Cooking_Pot : MonoBehaviour
 		return true;
 	}
 
-	public List<string> Sort(List<string> L)
+	/*public List<string> Sort(List<string> L)
 	{
 		bool sorted = false;
 
@@ -150,7 +178,7 @@ public class Cooking_Pot : MonoBehaviour
 		}
 
 		return L;
-	}
+	}*/
 
 	private void OnGUI()
 	{
@@ -199,12 +227,24 @@ public class Cooking_Pot : MonoBehaviour
 			if (IsTheSame(aliment_inside, recette_Tomato3))
 			{
 				Debug.Log("Cuisiner une soupe à la tomate");
-				sauce.GetComponent<Renderer>().material.color = Color.red;
+				sauce.GetComponent<Renderer>().material.color = Couleur_tomates;
 			}
 			else if (IsTheSame(aliment_inside, recette_Carot3))
 			{
 				Debug.Log("Cuisiner une soupe à la Carotte");
 				sauce.GetComponent<Renderer>().material.color = Couleur_carotte;
+			}
+			else if (IsTheSame(aliment_inside, recette_Carot2tomate) /*|| IsTheSame(aliment_inside, recette_Carot2tomateVS2) ||
+			         IsTheSame(aliment_inside, recette_Carot2tomateVS3)*/)
+			{
+				Debug.Log("Cuisiner une soupe avec 2 carottes et 1 tomate");
+				sauce.GetComponent<Renderer>().material.color = CouleurCarot2tomato;
+			}
+			else if (IsTheSame(aliment_inside, recette_Tomates2carot) /*|| IsTheSame(aliment_inside, recette_Tomates2carotVS2) ||
+			         IsTheSame(aliment_inside, recette_Tomates2carotVS3)*/)
+			{
+				Debug.Log("Cuisiner une soupe avec 2 tomates et 1 carotte");
+				sauce.GetComponent<Renderer>().material.color = CouleurTomato2Carot;
 			}
 			else
 			{
@@ -214,5 +254,4 @@ public class Cooking_Pot : MonoBehaviour
 			
 		}
 	}
-	
 }
