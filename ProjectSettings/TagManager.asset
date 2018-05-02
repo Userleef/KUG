@@ -19,6 +19,8 @@ TagManager:
   - rendu
   - Burned
   - Target
+  - Stove_place
+  - F Steak
   layers:
   - Default
   - TransparentFX

@@ -22,6 +22,13 @@ public class Command_Gestion : MonoBehaviour
 	public Texture Ingredient1;
 	public Texture Ingredient2;
 	public Texture Ingredient3;
+	public Texture Ingredient4;
+	public Texture Ingredient5;
+	public Texture Ingredient6;
+
+	public Texture Ingredient_Special_1;
+	public Texture Ingredient_Special_2;
+	public Texture Ingredient_Special_3;
 	
 	public List<string> recette_Tomato3 = new List<string>{"FC Tomato","FC Tomato","FC Tomato"};
 	public List<string> recette_Carot3 = new List<string>{"FC Carot","FC Carot","FC Carot"};
@@ -29,6 +36,7 @@ public class Command_Gestion : MonoBehaviour
 	public List<string> recette_Tomates2carot = new List<string>{"FC Tomato","FC Tomato","FC Carot"};
 
 	public List<Texture> Ingr;
+	public List<Texture> Ingr_Special;
 	
 	// Use this for initialization
 	void Start () {
@@ -44,6 +52,31 @@ public class Command_Gestion : MonoBehaviour
 		if (Ingredient3 != null)
 		{
 			Ingr.Add(Ingredient3);
+		}
+		if (Ingredient4 != null)
+		{
+			Ingr.Add(Ingredient4);
+		}
+		if (Ingredient5 != null)
+		{
+			Ingr.Add(Ingredient5);
+		}
+		if (Ingredient6 != null)
+		{
+			Ingr.Add(Ingredient6);
+		}
+
+		if (Ingredient_Special_1 != null)
+		{
+			Ingr_Special.Add(Ingredient_Special_1);
+		}
+		if (Ingredient_Special_2 != null)
+		{
+			Ingr_Special.Add(Ingredient_Special_2);
+		}
+		if (Ingredient_Special_3 != null)
+		{
+			Ingr_Special.Add(Ingredient_Special_3);
 		}
 	}
 	
@@ -94,7 +127,7 @@ public class Command_Gestion : MonoBehaviour
 		RawImage current_slot = Choose_Slot();
 		if (current_slot != null)
 		{
-			current_slot.GetComponent<Generate_Command>().generate_Command(Ingr);
+			current_slot.GetComponent<Generate_Command>().generate_Command(Ingr, Ingr_Special);
 			current_slot.gameObject.SetActive(true);
 			current_slot.GetComponent<Generate_Command>().free = false;
 		}

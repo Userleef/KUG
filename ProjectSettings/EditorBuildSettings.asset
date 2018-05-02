@@ -56,3 +56,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Story/6.unity
     guid: 712c2eb4e8f64a44da8f891914125420
+  - enabled: 1
+    path: Assets/scenes/Menu/Lobby.unity
+    guid: 105e1b081b1e56441a63151f9b572595

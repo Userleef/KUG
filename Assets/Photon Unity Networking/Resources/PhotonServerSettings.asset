@@ -64,4 +64,9 @@ MonoBehaviour:
   - RendreAssiette
   - PrendreAssietteRendu
   - LaverAssiette
+  - "remplircasserolepos\xE9esurtable"
+  - RemplirAssietteEnMainPoele
+  - RemplirAssiettePoele
+  - RemplirAssietteEnMainFourPoele
+  - JeterPoele
   DisableAutoOpenWizard: 1

@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
 	public float timeRemaining;
 	public GUIStyle guiStyle = new GUIStyle();
+	public RawImage Game_over_display;
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -30,7 +33,10 @@ public class Countdown : MonoBehaviour
 		}
 		else
 		{
-			GUI.Label(new Rect(240, 100, 100, 100), "Time's up", guiStyle);
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.Confined;
+			Game_over_display.gameObject.SetActive(true);
+			Game_over_display.GetComponent<Display_Star>().display_star();
 			Time.timeScale = 0;
 		}
 	}

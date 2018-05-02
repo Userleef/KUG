@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
 	
 	private void OnTriggerStay(Collider Col)
 	{
-		if (Col.gameObject.tag[0] == 'F' || Col.gameObject.name == "Casserole" || Col.gameObject.tag == "assiette")
+		if (Col.gameObject.tag[0] == 'F' || Col.gameObject.name == "Casserole" || Col.gameObject.tag == "assiette" || Col.gameObject.name == "Stove")
 		{
 			player.GetComponent<Controller>().is_food = true;
 			player.GetComponent<Controller>().Food = Col.gameObject;

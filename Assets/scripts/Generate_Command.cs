@@ -87,41 +87,64 @@ public class Generate_Command : MonoBehaviour
 		return true;
 	}
 
-	public void generate_Command(List<Texture> Ingr)
+	public void generate_Command(List<Texture> Ingr, List<Texture> Ingr_Spe)
 	{
 		Timer_Command = Intervalle;
-		int place = Random.Range(0,Ingr.Count);
-		Slot_ingredient1.GetComponent<RawImage>().texture = Ingr[place];
-		recette_commande.Add(Ingr[place].name);
 		
-		place = Random.Range(0,Ingr.Count);
-		Slot_ingredient2.GetComponent<RawImage>().texture = Ingr[place];
-		recette_commande.Add(Ingr[place].name);
+		int i =  Random.Range(0,2);
+
+		if (i == 0 || Ingr_Spe.Count == 0)
+		{
+			
+			Slot_ingredient1.gameObject.SetActive(true);
+			Slot_ingredient2.gameObject.SetActive(true);
+			Slot_ingredient3.gameObject.SetActive(true);
+			
+			int place = Random.Range(0,Ingr.Count);
+			Slot_ingredient1.GetComponent<RawImage>().texture = Ingr[place];
+			recette_commande.Add(Ingr[place].name);
 		
-		place = Random.Range(0,Ingr.Count);
-		Slot_ingredient3.GetComponent<RawImage>().texture = Ingr[place];
-		recette_commande.Add(Ingr[place].name);
-		//recette_commande = Sort(recette_commande);
-		recette_commande.Sort();
-		if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Carot3))
-		{
-			platImage.GetComponent<RawImage>().texture = platfullcarotte;
-		}
-		else if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Tomato3))
-		{
-			platImage.GetComponent<RawImage>().texture = platfulltomate;
-		}
-		else if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Tomates2carot))
-		{
-			platImage.GetComponent<RawImage>().texture = plattomates2carottes;
-		}
-		else if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Carot2tomate))
-		{
-			platImage.GetComponent<RawImage>().texture = platcarottes2tomate;
+			place = Random.Range(0,Ingr.Count);
+			Slot_ingredient2.GetComponent<RawImage>().texture = Ingr[place];
+			recette_commande.Add(Ingr[place].name);
+		
+			place = Random.Range(0,Ingr.Count);
+			Slot_ingredient3.GetComponent<RawImage>().texture = Ingr[place];
+			recette_commande.Add(Ingr[place].name);
+			//recette_commande = Sort(recette_commande);
+			recette_commande.Sort();
+			if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Carot3))
+			{
+				platImage.GetComponent<RawImage>().texture = platfullcarotte;
+			}
+			else if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Tomato3))
+			{
+				platImage.GetComponent<RawImage>().texture = platfulltomate;
+			}
+			else if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Tomates2carot))
+			{
+				platImage.GetComponent<RawImage>().texture = plattomates2carottes;
+			}
+			else if (IsTheSame(recette_commande, MainCamera.GetComponent<Command_Gestion>().recette_Carot2tomate))
+			{
+				platImage.GetComponent<RawImage>().texture = platcarottes2tomate;
+			}
+			else
+			{
+				platImage.GetComponent<RawImage>().texture = platvide;
+			}
 		}
 		else
 		{
-			platImage.GetComponent<RawImage>().texture = platvide;
+			int place = Random.Range(0,Ingr_Spe.Count);
+
+			platImage.GetComponent<RawImage>().texture = Ingr_Spe[place];
+			recette_commande = new List<string>(){Ingr_Spe[place].name};
+
+			Slot_ingredient1.gameObject.SetActive(false);
+			Slot_ingredient2.gameObject.SetActive(false);
+			Slot_ingredient3.gameObject.SetActive(false);
+
 		}
 	}
 }

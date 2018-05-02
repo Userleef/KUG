@@ -31,12 +31,13 @@ public class Cooking_Pot : MonoBehaviour
 	
 	public List<string> recette_Carot2tomateVS3;
 	public List<string> recette_Tomates2carotVS3;*/
-	
 
+	public ParticleSystem ps;
 	public GameObject sauce;
 
 	private Color Couleur_tomates;
 	private Color Couleur_carotte;
+	private Color Burn;
 	private Color Couleur_inconnue = new Color();
 	private Color CouleurCarot2tomato;
 	private Color CouleurTomato2Carot;
@@ -45,6 +46,8 @@ public class Cooking_Pot : MonoBehaviour
 	public Canvas TimeBar;
 	public Image timeBarGreen;
 	public Image timeBarRed;
+
+	public bool Is_Ready;
 	
 	// Use this for initializatio
 	void Start ()
@@ -62,17 +65,16 @@ public class Cooking_Pot : MonoBehaviour
 		//couleur recette inconnue
 		ColorUtility.TryParseHtmlString("#409AA4", out Couleur_inconnue);
 		
+		//plat brulé
+		ColorUtility.TryParseHtmlString("#135C10", out Burn);
+		
 		//couleur recette 2 carottes et 1 tomate
 		ColorUtility.TryParseHtmlString("#FB5430", out CouleurCarot2tomato);
 		recette_Carot2tomate = new List<string>{"FC Carot","FC Carot","FC Tomato"};
-		//recette_Carot2tomateVS2 = new List<string>{"FC Carot","FC Tomato","FC Carot"};
-		//recette_Carot2tomateVS3 = new List<string>{"FC Tomato","FC Carot","FC Carot"};
 		
 		//couleur recette 2 tomates et 1 carotte
 		ColorUtility.TryParseHtmlString("#B62607", out CouleurTomato2Carot);
 		recette_Tomates2carot = new List<string>{"FC Tomato","FC Tomato","FC Carot"};
-		//recette_Tomates2carotVS2 = new List<string>{"FC Tomato","FC Carot","FC Tomato"};
-		//recette_Tomates2carotVS3 = new List<string>{"FC Carot","FC Tomato","FC Tomato"};
 	}
 	
 	// Update is called once per frame
@@ -106,8 +108,6 @@ public class Cooking_Pot : MonoBehaviour
 		al.SetActive(false);
 		DefineSlot(aliment_inside).SetActive(true);
 		DefineSlot(aliment_inside).GetComponent<Renderer>().material.color = DefineColor(al);
-		
-		Debug.Log(aliment_inside.Count);
 
 		//if (aliment_inside.Count == 0)
 			TimerCook = 10;
@@ -135,6 +135,10 @@ public class Cooking_Pot : MonoBehaviour
 		slot3.gameObject.SetActive(false);
 		sauce.GetComponent<Renderer>().material = material_fond_casserole;
 		sauce.tag = "Untagged";
+		Is_Ready = false;
+		ps.playOnAwake = false;
+		ps.Pause();
+		ps.Clear();
 	}
 	
 	public bool IsTheSame(List<string> L1, List<string> L2)
@@ -191,13 +195,17 @@ public class Cooking_Pot : MonoBehaviour
 		slot1.gameObject.SetActive(false);
 		slot2.gameObject.SetActive(false);
 		slot3.gameObject.SetActive(false);
-		sauce.GetComponent<Renderer>().material.color = Color.magenta;
+		sauce.GetComponent<Renderer>().material.color = Burn;
 		sauce.tag = "Burned";
 		TimeBar.gameObject.SetActive(false);
+		ps.playOnAwake = true;
+		ps.Emit(10);
+		ps.Play();
 	}
 
 	public void run_cook()
 	{
+		Is_Ready = true;
 		if (aliment_inside.Count == 3)
 		{
 			slot1.gameObject.SetActive(false);

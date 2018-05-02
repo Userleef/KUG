@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PAUSE : MonoBehaviour
 {
-	public GameObject menuObject;
+	public Canvas menuObject;
 	private bool isActive;
 	
 	void Update () {
 		if (isActive )
 		{
-			menuObject.SetActive(true);
+			menuObject.gameObject.SetActive(true);
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.Confined;
 			Time.timeScale = 0;
 		}
 		else {
-			menuObject.SetActive(false);
+			menuObject.gameObject.SetActive(false);
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
 			Time.timeScale = 1;
