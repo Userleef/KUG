@@ -151,11 +151,13 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+4dec977c26b49fd93b86e80555afdd9a Assembly-CSharp.dll:.Create_Room
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.change_scene
 53257c969e3876f92334828447be52f3 Assembly-CSharp.dll:.Lavabo
 b8b09d4960eed4873700e01573ede65d Assembly-CSharp.dll:.Save_Data
 109f100dfa9a09c85b5235a5bc6a315a Assembly-CSharp.dll:.Assiette
 4ce2b1853c9a392b036a6a654be90ccb Assembly-CSharp.dll:.OnClickInstantiate
+0c95ddba0f8d117cc8d50753faf65265 Assembly-CSharp.dll:.Stove
 090584907af2e462994cc893ced507b3 Assembly-CSharp.dll:.PhotonRigidbodyView
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
@@ -213,5 +215,3 @@ d1755adc44fcb9e44c42a5889d35f7a0 Assembly-CSharp.dll:.MoveByKeys
 604f5f55c1cc414f64da1990b36ff015 Assembly-CSharp.dll:.PhotonView
 b2dc25029b6f083ffbbdf9df269f825a Assembly-CSharp.dll:.InRoomChat
 f8e18f37b6c87571e0668ebd69a1019f Assembly-CSharp.dll:.Cook
-4dec977c26b49fd93b86e80555afdd9a Assembly-CSharp.dll:.Create_Room
-0c95ddba0f8d117cc8d50753faf65265 Assembly-CSharp.dll:.Stove
