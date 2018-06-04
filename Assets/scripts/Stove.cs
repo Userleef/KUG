@@ -14,6 +14,8 @@ public class Stove : MonoBehaviour
 	public Image timeBarGreen;
 	public Image timeBarRed;
 	public Material steak_cuit;
+	public Material fish_cuit;
+	public Material fish_crame;
 	public bool Is_ready;
 	public ParticleSystem ps;
 
@@ -84,14 +86,22 @@ public class Stove : MonoBehaviour
 	public void run_cook()
 	{
 		Is_ready = true;
-		food_on.GetComponent<Renderer>().material = steak_cuit;
+		if (food_on.tag == "F Steak")
+			food_on.GetComponent<Renderer>().material = steak_cuit;
+		else if (food_on.tag == "F Fish")
+			food_on.GetComponent<poisson>().fish.GetComponent<Renderer>().material = fish_cuit;
 	}
 
 	public void BurnCook()
 	{
 		TimeBar.gameObject.SetActive(false);
+		
+		if (food_on.tag == "F Steak")
+			food_on.GetComponent<Renderer>().material.color = Color.black;
+		else if (food_on.tag == "F Fish")
+			food_on.GetComponent<poisson>().fish.GetComponent<Renderer>().material = fish_crame;
+		
 		food_on.tag = "Burned";
-		food_on.GetComponent<Renderer>().material.color = Color.black;
 		ps.playOnAwake = true;
 		ps.Emit(100);
 		ps.Play();

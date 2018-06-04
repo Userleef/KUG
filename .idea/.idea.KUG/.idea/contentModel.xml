@@ -152,6 +152,7 @@
           <e p="Music_LVL.cs" t="Include" />
           <e p="musique.cs" t="Include" />
           <e p="PAUSE.cs" t="Include" />
+          <e p="poisson.cs" t="Include" />
           <e p="Save_Data.cs" t="Include" />
           <e p="Spawn_aliment.cs" t="Include" />
           <e p="Stove.cs" t="Include" />

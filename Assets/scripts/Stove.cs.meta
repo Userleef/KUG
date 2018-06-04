@@ -1,11 +1,19 @@
 fileFormatVersion: 2
 guid: b68b0ff66c53e5e47810b3e887de84b6
-timeCreated: 1525227809
+timeCreated: 1528125669
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - food_on: {instanceID: 0}
+  - TimeBar: {instanceID: 0}
+  - timeBarGreen: {instanceID: 0}
+  - timeBarRed: {instanceID: 0}
+  - steak_cuit: {fileID: 2100000, guid: 1736227c3f4527342bc718db7347554a, type: 2}
+  - fish_cuit: {fileID: 2100000, guid: 810331de4f6fada4a8a3a3bb81a9505f, type: 2}
+  - fish_crame: {fileID: 2100000, guid: e5ef89f7c68014b4693e0c21b6712086, type: 2}
+  - ps: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

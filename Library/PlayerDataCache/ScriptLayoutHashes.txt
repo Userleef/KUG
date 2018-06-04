@@ -7,6 +7,12 @@ Assets/scenes/Menu/menu_play_fr.unity
 Assets/scenes/scene_test.unity
 Assets/scenes/Menu/menu_niveau.unity
 Assets/scenes/Menu/menu_level.unity
+Assets/scenes/Story/e_1.unity
+Assets/scenes/Story/e_2.unity
+Assets/scenes/Story/d_1.unity
+Assets/scenes/Story/e_3.unity
+Assets/scenes/Story/e_4.unity
+Assets/scenes/Story/d_2.unity
 Assets/scenes/Niveaux/Niveau 1.unity
 Assets/scenes/Niveaux/Niveau 2.unity
 Assets/scenes/Niveaux/Niveau 3.unity
@@ -15,6 +21,10 @@ Assets/scenes/Story/1.unity
 Assets/scenes/Story/2.unity
 Assets/scenes/Story/3.unity
 Assets/scenes/Story/4.unity
+Assets/scenes/Niveaux/Niveau 5.unity
+Assets/scenes/Niveaux/Niveau 6.unity
+Assets/scenes/Niveaux/Niveau 7.unity
+Assets/scenes/Niveaux/Niveau 8.unity
 Assets/scenes/Story/5.unity
 Assets/scenes/Story/6.unity
 Assets/scenes/Menu/Lobby.unity
@@ -22,7 +32,6 @@ SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PunTeams
 4d0187d1ee26ceba125a106f0dde0360 Assembly-CSharp.dll:.SmoothSyncMovement
 4484fbf176a70edb5f28de1956398140 Assembly-CSharp.dll:.Is_food_on
-c59754236559f7a29050aa68599d3800 Assembly-CSharp.dll:.Controller
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -36,6 +45,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 b027659a510ae8d01d6d5f31baf9827a Assembly-CSharp.dll:.PhotonStatsGui
+0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.ThirdPerson.AICharacterControl
 6fce0feadba7642a361e87ebfcfe753e Assembly-CSharp.dll:.PhotonAnimatorView
 28b9635dada29d5334975a74e5429ae3 Assembly-CSharp.dll:ExitGames.UtilityScripts.TextToggleIsOnTransition
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:ExitGames.UtilityScripts.ButtonInsideScrollList
@@ -154,10 +164,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 4dec977c26b49fd93b86e80555afdd9a Assembly-CSharp.dll:.Create_Room
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.change_scene
 53257c969e3876f92334828447be52f3 Assembly-CSharp.dll:.Lavabo
+37bf4d6a6d424731cb4a9b998783e5c6 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter
 b8b09d4960eed4873700e01573ede65d Assembly-CSharp.dll:.Save_Data
 109f100dfa9a09c85b5235a5bc6a315a Assembly-CSharp.dll:.Assiette
 4ce2b1853c9a392b036a6a654be90ccb Assembly-CSharp.dll:.OnClickInstantiate
-0c95ddba0f8d117cc8d50753faf65265 Assembly-CSharp.dll:.Stove
+b54f8ee3e8314c4900e2ec4a99857132 Assembly-CSharp.dll:.Stove
 090584907af2e462994cc893ced507b3 Assembly-CSharp.dll:.PhotonRigidbodyView
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
@@ -203,6 +214,7 @@ ee8540d1efea9148410a914295c889e3 Assembly-CSharp.dll:.OnJoinedInstantiate
 6b7f3b627f03aa2dae54ad0ecb0a7d7a Assembly-CSharp.dll:.PhotonLagSimulationGui
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.musique
+52ae5be7f40925b3ff9b822676147aa8 Assembly-CSharp.dll:.Controller
 ec0082b40adf3b0930cd87250ffdbf1d Assembly-CSharp.dll:.SupportLogger
 1356b4a6096c35c829823b7e28399030 Assembly-CSharp.dll:.ShowStatusWhenConnecting
 298901e5fd6ccf8cd5b55cb6018e6abe Assembly-CSharp.dll:.PickupItemSimple
@@ -215,3 +227,4 @@ d1755adc44fcb9e44c42a5889d35f7a0 Assembly-CSharp.dll:.MoveByKeys
 604f5f55c1cc414f64da1990b36ff015 Assembly-CSharp.dll:.PhotonView
 b2dc25029b6f083ffbbdf9df269f825a Assembly-CSharp.dll:.InRoomChat
 f8e18f37b6c87571e0668ebd69a1019f Assembly-CSharp.dll:.Cook
+885d620e42e9e129942862c9e996b385 Assembly-CSharp.dll:.poisson

@@ -165,7 +165,7 @@ public class Controller : Photon.MonoBehaviour
 			}
 			//Ajouter un aliment dans la poele
 			else if (Cooking_place.GetComponent<Cook>().marmitte != null && Cooking_place.GetComponent<Cook>().marmitte.name == "Stove" && !Cooking_place.GetComponent<Cook>().Is_full() && Input.GetKeyDown(KeyCode.Space) 
-			         && is_taken && grab_object.tag == "F Steak")
+			         && is_taken && (grab_object.tag == "F Steak" || grab_object.tag == "F Fish"))
 			{
 				Debug.Log("Ajouter aliment Poele");
 				

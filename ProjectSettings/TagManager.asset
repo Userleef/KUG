@@ -21,6 +21,7 @@ TagManager:
   - Target
   - Stove_place
   - F Steak
+  - F Fish
   layers:
   - Default
   - TransparentFX
