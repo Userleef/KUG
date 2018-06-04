@@ -45,6 +45,12 @@ EditorBuildSettings:
     path: Assets/scenes/Story/d_2.unity
     guid: d5e91c399325bb84aa7189dde5a766e3
   - enabled: 1
+    path: Assets/scenes/Story/d_3.unity
+    guid: 206a2c7546a299f42a771bb31422151a
+  - enabled: 1
+    path: Assets/scenes/Story/d_4.unity
+    guid: 770496bcea021164bbe274c956428c8f
+  - enabled: 1
     path: Assets/scenes/Niveaux/Niveau 1.unity
     guid: 40885fecbdf33aa4c9a44d1cc752860a
   - enabled: 1

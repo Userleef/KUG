@@ -15,6 +15,10 @@ public class Display_Star : MonoBehaviour
 	public RawImage Star1;
 	public RawImage Star2;
 	public RawImage Star3;
+	public AudioSource for3stars;
+	public AudioSource for2stars;
+	public AudioSource for1stars;
+	//public AudioSource for0stars;
 
 	public Text Display_score;
 
@@ -55,6 +59,23 @@ public class Display_Star : MonoBehaviour
 		else
 		{
 			Star3.gameObject.SetActive(false);
+		}
+
+		if (score >= palier3)
+		{
+			for3stars.mute = false;
+		}
+		else if (score >= palier2)
+		{
+			for3stars.mute = false;
+		}
+		else if (score >= palier1)
+		{
+			for2stars.mute = false;
+		}
+		else
+		{
+			for1stars.mute = false;
 		}
 
 		Display_score.GetComponent<Text>().text = "Score : " + score + " $";

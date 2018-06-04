@@ -151,6 +151,7 @@
           <e p="Lavabo.cs" t="Include" />
           <e p="Music_LVL.cs" t="Include" />
           <e p="musique.cs" t="Include" />
+          <e p="musiqueMute.cs" t="Include" />
           <e p="PAUSE.cs" t="Include" />
           <e p="poisson.cs" t="Include" />
           <e p="Save_Data.cs" t="Include" />

@@ -10,6 +10,7 @@ public class Lavabo : MonoBehaviour {
 	public Image timeBarGreen;
 
 	private GameObject player;
+	public AudioSource audio;
 	
 	// Use this for initialization
 	void Start () {
@@ -46,11 +47,13 @@ public class Lavabo : MonoBehaviour {
 		{
 			TimeBar.gameObject.SetActive(true);
 			timeBarGreen.fillAmount = (TimerWash / 10.0f) * 3;
+			audio.mute = false;
 		}
 		else if(TimerWash < 0.1 && TimerWash >= 0)
 		{
 			TimeBar.gameObject.SetActive(false);
 			Clean();
+			audio.mute = true;
 		}
 	}
 

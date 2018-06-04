@@ -10,7 +10,8 @@ public class Is_food_on_cutting_place : Photon.MonoBehaviour
 
 	public bool have_food = false;
 	public GameObject food_on;
-	
+
+	public AudioSource audio;
 	public GameObject Cutting_Tomato;
 	public GameObject Cutting_Carot;
 
@@ -46,8 +47,15 @@ public class Is_food_on_cutting_place : Photon.MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		if(TimerCut > 0 && can_cut && push_key)
+		if (TimerCut > 0 && can_cut && push_key)
+		{
 			TimerCut -= Time.deltaTime;
+			audio.mute = false;
+		}
+		else
+		{
+			audio.mute = true;
+		}
 	}
 	
 	private void OnGUI()
@@ -68,18 +76,19 @@ public class Is_food_on_cutting_place : Photon.MonoBehaviour
 	public void Run_Cut()
 	{
 		push_key = true;
+		
 		if (TimerCut < 0)
 		{
 			is_cutting = true;
 			TimerCut = 3f;
 		}
 
+
 	}
 
 	public void CutAliment()
 	{
 		GameObject Aliment_a_couper = food_on;
-		
 		if (food_on.tag == "F Tomato")
 		{
 			Aliment_a_couper = Cutting_Tomato;
