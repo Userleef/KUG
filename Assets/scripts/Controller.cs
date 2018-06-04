@@ -34,11 +34,13 @@ public class Controller : Photon.MonoBehaviour
 	private Collider Col;
 
 	public GameObject grab_object;
+	public Animator walk;
 
 	// Use this for initialization
 	void Start()
 	{
 		t = gameObject.GetComponent<Transform>();
+		walk = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -52,24 +54,52 @@ public class Controller : Photon.MonoBehaviour
 	void Update()
 	{
 		
+		
 		Vector3 dir = Vector3.zero;
 		if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.S))
-			Movment(315, Vector3.left, Vector3.back, ref dir, transform);
+		{
+			Movment(315 - 90, Vector3.left, Vector3.back, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
 		else if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.Z))
-			Movment(45, Vector3.left, Vector3.forward, ref dir, transform);
+		{
+			Movment(45 -90, Vector3.left, Vector3.forward, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
 		else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.Z))
-			Movment(135, Vector3.forward, Vector3.right, ref dir, transform);
+		{
+			Movment(135 - 90, Vector3.forward, Vector3.right, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
 		else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
-			Movment(225, Vector3.right, Vector3.back, ref dir, transform);
+		{
+			Movment(225 - 90, Vector3.right, Vector3.back, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
 		else if (Input.GetKey(KeyCode.Q))
-			Movment(0, Vector3.left, Vector3.zero, ref dir, transform);
+		{
+			Movment(0 - 90, Vector3.left, Vector3.zero, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
 		else if (Input.GetKey(KeyCode.Z))
-			Movment(90, Vector3.forward, Vector3.zero, ref dir, transform);
+		{
+			Movment(90 - 90, Vector3.forward, Vector3.zero, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
 		else if (Input.GetKey(KeyCode.D))
-			Movment(180, Vector3.right, Vector3.zero, ref dir, transform);
+		{
+			Movment(180 - 90, Vector3.right, Vector3.zero, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
 		else if (Input.GetKey(KeyCode.S))
-			Movment(270, Vector3.zero, Vector3.back, ref dir, transform);
+		{
+			Movment(270 - 90, Vector3.zero, Vector3.back, ref dir, transform);
+			walk.SetBool("walk", true);
+		}
+		else
+			walk.SetBool("walk", false);
 		t.position += dir * Time.deltaTime * SpeedM;
+
 
 
 		//Ramasser un objet du sol
@@ -738,6 +768,7 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 
 		Lavabo.GetComponent<Lavabo>().Run_Wash();
+		
 	}
 
 	[PunRPC]

@@ -29,7 +29,7 @@ public class Appearance : Photon.MonoBehaviour
 	void OnJoinedRoom()
 	{
 		Debug.Log("Joined room");
-		GameObject p = PhotonNetwork.Instantiate("Player 1", spawn_position + Vector3.up * 1.2f, Quaternion.identity, 0);
+		GameObject p = PhotonNetwork.Instantiate("gododo", spawn_position + Vector3.up * 0.1f, Quaternion.identity, 0);
 		p.GetComponent<Controller>().enabled = true;
 	}
 
