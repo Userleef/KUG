@@ -1,11 +1,23 @@
 fileFormatVersion: 2
 guid: 5a2a53a854c37ea49abd0a386f8120c8
-timeCreated: 1524929023
+timeCreated: 1528152225
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MainCamera: {instanceID: 0}
+  - Slot_ingredient1: {instanceID: 0}
+  - Slot_ingredient2: {instanceID: 0}
+  - Slot_ingredient3: {instanceID: 0}
+  - platImage: {instanceID: 0}
+  - platfullcarotte: {instanceID: 0}
+  - platfulltomate: {instanceID: 0}
+  - platfulloignon: {fileID: 2800000, guid: 395add7e2de685e4b94ccee78feaff85, type: 3}
+  - platcarottes2tomate: {instanceID: 0}
+  - plattomates2carottes: {instanceID: 0}
+  - platvide: {instanceID: 0}
+  - timeBarGreen: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

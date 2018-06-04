@@ -15,6 +15,7 @@ public class Generate_Command : MonoBehaviour
 	
 	public Texture platfullcarotte;
 	public Texture platfulltomate;
+	public Texture platfulloignon;
 	public Texture platcarottes2tomate;
 	public Texture plattomates2carottes;
 	public Texture platvide;
@@ -131,7 +132,8 @@ public class Generate_Command : MonoBehaviour
 			}
 			else
 			{
-				platImage.GetComponent<RawImage>().texture = platvide;
+				platImage.GetComponent<RawImage>().texture = platfulloignon;
+				//platImage.GetComponent<RawImage>().texture = platvide;
 			}
 		}
 		else

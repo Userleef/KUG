@@ -14,6 +14,7 @@ public class Is_food_on_cutting_place : Photon.MonoBehaviour
 	public AudioSource audio;
 	public GameObject Cutting_Tomato;
 	public GameObject Cutting_Carot;
+	public GameObject Cutting_Oignon;
 
 	private float TimerCut = -1;
 	public Canvas TimeBar;
@@ -93,9 +94,13 @@ public class Is_food_on_cutting_place : Photon.MonoBehaviour
 		{
 			Aliment_a_couper = Cutting_Tomato;
 		}
-		if (food_on.tag == "F Carot")
+		else if (food_on.tag == "F Carot")
 		{
 			Aliment_a_couper = Cutting_Carot;
+		}
+		else if (food_on.tag == "F Oignon")
+		{
+			Aliment_a_couper = Cutting_Oignon;
 		}
 		
 		food_on.SetActive(false);

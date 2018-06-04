@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 114672494423993984}
   - component: {fileID: 114600279342865510}
   - component: {fileID: 54021480748701576}
-  - component: {fileID: 135388969959793760}
   - component: {fileID: 65734251243863204}
+  - component: {fileID: 135388969959793760}
   m_Layer: 0
   m_Name: assiette
   m_TagString: assiette
@@ -1104,6 +1104,7 @@ MonoBehaviour:
   recette_inside: []
   Is_clean: 1
   sale: {fileID: 2100000, guid: 6b28a41bf0e4421449df7381e14136fd, type: 2}
+  Special_food: {fileID: 0}
 --- !u!114 &114394839545452400
 MonoBehaviour:
   m_ObjectHideFlags: 1

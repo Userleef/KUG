@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -421,6 +422,7 @@ public class Controller : Photon.MonoBehaviour
 		
 		grab_object.transform.parent = Cutting_place.transform;
 		grab_object.transform.position = Cutting_place.transform.position + Vector3.up * 1.2f;
+		grab_object.GetComponent<Collider>().isTrigger = false;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food = true;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on = grab_object;
 		is_taken = false;
@@ -435,11 +437,12 @@ public class Controller : Photon.MonoBehaviour
 		
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on.GetComponent<Syncro>().enabled = true;
 		grab_object = Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on;
+		grab_object.GetComponent<Collider>().isTrigger = true;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().have_food = false;
 		Cutting_place.GetComponent<Is_food_on_cutting_place>().food_on = null;
 		grab_object.GetComponent<Collider>().enabled = false;
 		grab_object.transform.parent = t;
-		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		grab_object.transform.position = Hand.position;
 		is_taken = true;
 	}
 	
@@ -460,6 +463,7 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 		
 		grab_object.transform.parent = Table.transform;
+		grab_object.GetComponent<Collider>().isTrigger = false;
 		if (grab_object.tag == "assiette")
 			grab_object.transform.position = Table.transform.position + Vector3.up * 0.75f;
 		else
@@ -476,10 +480,11 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 		Table.GetComponent<Is_food_on>().food_on.GetComponent<Syncro>().enabled = true;
 		grab_object = Table.GetComponent<Is_food_on>().food_on;
+		grab_object.GetComponent<Collider>().isTrigger = true;
 		Table.GetComponent<Is_food_on>().have_food = false;
 		Table.GetComponent<Is_food_on>().food_on = null;
 		grab_object.transform.parent = t;
-		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		grab_object.transform.position = Hand.position;
 		is_taken = true;
 	}
 	
@@ -608,6 +613,7 @@ public class Controller : Photon.MonoBehaviour
 		Placard.GetComponent<Spawn_aliment>().HaveFood = true;
 		Placard.GetComponent<Spawn_aliment>().FoodOn = grab_object;
 		grab_object.transform.parent = Placard.transform;
+		grab_object.GetComponent<Collider>().isTrigger = false;
 		if (grab_object.tag == "assiette")
 			grab_object.transform.position = Placard.transform.position + Vector3.up * 0.75f;
 		else
@@ -623,10 +629,11 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 		
 		grab_object = Placard.GetComponent<Spawn_aliment>().FoodOn;
+		grab_object.GetComponent<Collider>().isTrigger = true;
 		Placard.GetComponent<Spawn_aliment>().HaveFood = false;
 		Placard.GetComponent<Spawn_aliment>().FoodOn = null;
 		grab_object.transform.parent = t;
-		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		grab_object.transform.position = Hand.position;;
 		is_taken = true;
 	}
 
@@ -642,9 +649,10 @@ public class Controller : Photon.MonoBehaviour
 		Aliment.GetComponent<Collider>().enabled = false;
 		Aliment.transform.parent = t;
 		//photonView.RPC("Parent_t",  PhotonTargets.AllBuffered, Aliment.gameObject, t);
-		Aliment.transform.position = Hand.position + Vector3.down * 0.9f;
+		Aliment.transform.position = Hand.position;
 		is_taken = true;
 		grab_object = Aliment.gameObject;
+		grab_object.GetComponent<Collider>().isTrigger = true;
 	}
 
 	[PunRPC]
@@ -666,10 +674,11 @@ public class Controller : Photon.MonoBehaviour
 		
 		Cooking_place.GetComponent<Cook>().Take();
 		grab_object = Cooking_place.GetComponent<Cook>().marmitte.gameObject;
+		grab_object.GetComponent<Collider>().isTrigger = true;
 		grab_object.GetComponent<Syncro>().enabled = true;
 		Cooking_place.GetComponent<Cook>().marmitte = null;
 		grab_object.transform.parent = t;
-		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		grab_object.transform.position = Hand.position;
 		is_taken = true;
 	}
 	
@@ -683,6 +692,7 @@ public class Controller : Photon.MonoBehaviour
 		Cooking_place.GetComponent<Cook>().marmitte = grab_object;
 		Cooking_place.GetComponent<Cook>().Put();
 		grab_object.transform.parent = Cooking_place.transform;
+		grab_object.GetComponent<Collider>().isTrigger = false;
 		if(grab_object.name == "Casserole")
 			grab_object.transform.position = Cooking_place.transform.position + Vector3.up * 1.2f;
 		if(grab_object.name == "Stove")
@@ -740,6 +750,7 @@ public class Controller : Photon.MonoBehaviour
 
 		grab_object.transform.parent = Rendu.transform;
 		grab_object.transform.position = Rendu.transform.position + Vector3.up * 0.75f;
+		grab_object.GetComponent<Collider>().isTrigger = false;
 		Rendu.GetComponent<Is_food_on>().have_food = true;
 		Rendu.GetComponent<Is_food_on>().food_on = grab_object;
 		is_taken = false;
@@ -754,10 +765,11 @@ public class Controller : Photon.MonoBehaviour
 		nViews[0].viewID = id1;
 
 		grab_object = Rendu.GetComponent<Is_food_on>().food_on;
+		grab_object.GetComponent<Collider>().isTrigger = true;
 		Rendu.GetComponent<Is_food_on>().have_food = false;
 		grab_object.GetComponent<Syncro>().enabled = true;
 		grab_object.transform.parent = t;
-		grab_object.transform.position = Hand.position + Vector3.down * 0.9f;
+		grab_object.transform.position = Hand.position;
 		is_taken = true;
 	}
 	
@@ -780,9 +792,10 @@ public class Controller : Photon.MonoBehaviour
 		Food.GetComponent<Rigidbody>().isKinematic = true;
 		Food.GetComponent<Collider>().enabled = false;
 		Food.transform.parent = t;
-		Food.transform.position = Hand.position + Vector3.down * 0.9f;
+		Food.transform.position = Hand.position;
 		is_taken = true;
 		grab_object = Food;
+		grab_object.GetComponent<Collider>().isTrigger = true;
 	}
 
 	[PunRPC]
@@ -791,6 +804,7 @@ public class Controller : Photon.MonoBehaviour
 		PhotonView[] nViews = grab_object.GetComponentsInChildren<PhotonView>(); 
 		nViews[0].viewID = id1;
 		
+		grab_object.GetComponent<Collider>().isTrigger = false;
 		grab_object.GetComponent<Rigidbody>().isKinematic = false;
 		grab_object.GetComponent<Collider>().enabled = true;
 		grab_object.transform.parent = null;

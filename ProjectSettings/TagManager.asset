@@ -22,6 +22,8 @@ TagManager:
   - Stove_place
   - F Steak
   - F Fish
+  - F Oignon
+  - FC Oignon
   layers:
   - Default
   - TransparentFX

@@ -22,6 +22,7 @@ public class Cooking_Pot : MonoBehaviour
 	
 	public List<string> recette_Tomato3;
 	public List<string> recette_Carot3;
+	public List<string> recette_Oignon3;
 	
 	public List<string> recette_Carot2tomate;
 	public List<string> recette_Tomates2carot;
@@ -37,6 +38,7 @@ public class Cooking_Pot : MonoBehaviour
 
 	private Color Couleur_tomates;
 	private Color Couleur_carotte;
+	private Color Couleur_oignon;
 	private Color Burn;
 	private Color Couleur_inconnue = new Color();
 	private Color CouleurCarot2tomato;
@@ -62,8 +64,12 @@ public class Cooking_Pot : MonoBehaviour
 		ColorUtility.TryParseHtmlString("#DC7633", out Couleur_carotte);
 		recette_Carot3 = new List<string>{"FC Carot","FC Carot","FC Carot"};
 		
+		//couleur recette full oignon
+		ColorUtility.TryParseHtmlString("#A98AA5", out Couleur_oignon);
+		recette_Oignon3 = new List<string>{"FC Oignon","FC Oignon","FC Oignon"};
+		
 		//couleur recette inconnue
-		ColorUtility.TryParseHtmlString("#409AA4", out Couleur_inconnue);
+		ColorUtility.TryParseHtmlString("#A98AA5", out Couleur_inconnue);
 		
 		//plat brulé
 		ColorUtility.TryParseHtmlString("#135C10", out Burn);
@@ -99,6 +105,8 @@ public class Cooking_Pot : MonoBehaviour
 			return Couleur_tomates;
 		if(al.tag == "FC Carot")
 			return Couleur_carotte;
+		if(al.tag == "FC Oignon")
+			return Couleur_oignon;
 		return Couleur_inconnue;
 	}
 	
