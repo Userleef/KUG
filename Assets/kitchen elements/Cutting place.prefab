@@ -1494,6 +1494,8 @@ MonoBehaviour:
     type: 2}
   Cutting_Carot: {fileID: 1530386512356226, guid: 9f00297a160c8e84eabe88b1a673eac3,
     type: 2}
+  Cutting_Oignon: {fileID: 1576261117699816, guid: a2a7e99330e62414188b3d676593634d,
+    type: 2}
   TimeBar: {fileID: 223899523009826544}
   timeBarGreen: {fileID: 114960621179964832}
   is_cutting: 0

@@ -1489,6 +1489,7 @@ MonoBehaviour:
   platImage: {fileID: 855166037}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}
@@ -3766,6 +3767,131 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771452528}
+--- !u!1 &786374031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1654231450018852, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 786374032}
+  - component: {fileID: 786374034}
+  - component: {fileID: 786374033}
+  m_Layer: 0
+  m_Name: Musique
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &786374032
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4855270457786408, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786374031}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 7.538975, y: -2.6914816, z: 19.247328}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1678818401}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &786374033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114700110410992924, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786374031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &786374034
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 82333487989990802, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786374031}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: db416894afdd58845b9e70aa37ffa1e4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 1
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &793446760
 Prefab:
   m_ObjectHideFlags: 0
@@ -3899,7 +4025,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4238809831236184, guid: 1c4c215ae5d816842bac85a519b6e720, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c4c215ae5d816842bac85a519b6e720, type: 2}
@@ -5489,6 +5615,7 @@ MonoBehaviour:
   platImage: {fileID: 978252327}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}
@@ -6125,6 +6252,7 @@ MonoBehaviour:
   platImage: {fileID: 1465328053}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}
@@ -6202,7 +6330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4155447890837106, guid: 5f4a938574f60ca44834985005e8e347, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114064810511007132, guid: 5f4a938574f60ca44834985005e8e347,
         type: 2}
@@ -7286,7 +7414,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4437085738960580, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4437085738960580, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7324,6 +7452,67 @@ Prefab:
       propertyPath: Slot_command_4
       value: 
       objectReference: {fileID: 1315912591}
+    - target: {fileID: 4354619159281994, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174849372259132, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467200946242660, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736682660663866, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919225873184956, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509235863860500, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4213404739175338, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753488496364536, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428384684933834, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536626031983754, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428510880418602, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059638592522482, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431010172679526, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974231269214, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114832304979597610, guid: 478f3eee0d2c96a4eab1ea1218dd141d,
+        type: 2}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 786374034}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
   m_IsPrefabParent: 0
@@ -8970,6 +9159,7 @@ MonoBehaviour:
   platImage: {fileID: 2095721840}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}

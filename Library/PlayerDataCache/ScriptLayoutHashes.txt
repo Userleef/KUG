@@ -13,6 +13,8 @@ Assets/scenes/Story/d_1.unity
 Assets/scenes/Story/e_3.unity
 Assets/scenes/Story/e_4.unity
 Assets/scenes/Story/d_2.unity
+Assets/scenes/Story/d_3.unity
+Assets/scenes/Story/d_4.unity
 Assets/scenes/Niveaux/Niveau 1.unity
 Assets/scenes/Niveaux/Niveau 2.unity
 Assets/scenes/Niveaux/Niveau 3.unity
@@ -163,7 +165,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 4dec977c26b49fd93b86e80555afdd9a Assembly-CSharp.dll:.Create_Room
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.change_scene
-53257c969e3876f92334828447be52f3 Assembly-CSharp.dll:.Lavabo
+8c2fe231a95273179815e50c57924533 Assembly-CSharp.dll:.Lavabo
 37bf4d6a6d424731cb4a9b998783e5c6 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter
 b8b09d4960eed4873700e01573ede65d Assembly-CSharp.dll:.Save_Data
 109f100dfa9a09c85b5235a5bc6a315a Assembly-CSharp.dll:.Assiette
@@ -176,10 +178,12 @@ ada54cb428213a7e0c4b986e95788f97 Assembly-CSharp.dll:.PhotonTransformView
 8f215ac0acd6ff3e89cd81cfc2b08d92 Assembly-CSharp.dll:.Appearance
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Music_LVL
 c0ad1fb5d400aa83cb257e5f6c3714cf Assembly-CSharp.dll:.OnClickDestroy
-c5d32e7e0e45a1da47efb5125287a690 Assembly-CSharp.dll:.Generate_Command
+2c85bc09fab601a6ee2597995cd4a294 Assembly-CSharp.dll:.Generate_Command
+885d620e42e9e129942862c9e996b385 Assembly-CSharp.dll:.poisson
 30c6237931168f8b4c2f10a656a47aa8 Assembly-CSharp.dll:.PickupItem
 b9efe2a0d1c9ba7bc46e66a07a897115 Assembly-CSharp.dll:.ServerSettings
 e3db0de06ede87e84b88d4a2079f2b57 Assembly-CSharp.dll:ExitGames.UtilityScripts.TextButtonTransition
+9e9ff7cd27d548b76fe0e349db9c0bd4 Assembly-CSharp.dll:.musiqueMute
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -195,8 +199,8 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PointedAtGameObjectInfo
-33228f3af2a176face599958dc4ee794 Assembly-CSharp.dll:.Is_food_on_cutting_place
-3c104dfc49d69a65bbaa8497be3a1ec3 Assembly-CSharp.dll:.Display_Star
+5a9a8845d470ebeaa3b5ea1c84fc124a Assembly-CSharp.dll:.Is_food_on_cutting_place
+3fb67994441c726e3a42c16e8f227109 Assembly-CSharp.dll:.Display_Star
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -219,12 +223,11 @@ ec0082b40adf3b0930cd87250ffdbf1d Assembly-CSharp.dll:.SupportLogger
 1356b4a6096c35c829823b7e28399030 Assembly-CSharp.dll:.ShowStatusWhenConnecting
 298901e5fd6ccf8cd5b55cb6018e6abe Assembly-CSharp.dll:.PickupItemSimple
 08712033bfb8d4fd2842041f9a20ded7 Assembly-CSharp.dll:.ManualPhotonViewAllocator
-406e7e3eccb852eebd9af4f294984581 Assembly-CSharp.dll:.Cooking_Pot
+c992f3ef77a4f15aacb1466e68fc5f61 Assembly-CSharp.dll:.Cooking_Pot
 d1755adc44fcb9e44c42a5889d35f7a0 Assembly-CSharp.dll:.MoveByKeys
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.QuitOnEscapeOrBack
 7490d6e230d336021f4cdf830bf78cb9 Assembly-CSharp.dll:.Command_Gestion
 5f9163b1973ce4ab801b7e60d08153e4 Assembly-CSharp.dll:.Countdown
 604f5f55c1cc414f64da1990b36ff015 Assembly-CSharp.dll:.PhotonView
 b2dc25029b6f083ffbbdf9df269f825a Assembly-CSharp.dll:.InRoomChat
-f8e18f37b6c87571e0668ebd69a1019f Assembly-CSharp.dll:.Cook
-885d620e42e9e129942862c9e996b385 Assembly-CSharp.dll:.poisson
+e9c8ea42af85de1176fdc12458c88f4b Assembly-CSharp.dll:.Cook

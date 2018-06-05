@@ -133,6 +133,11 @@
             <e p="WebSocket.cs" t="Include" />
           </e>
         </e>
+        <e p="scenes" t="Include">
+          <e p="Menu" t="Include">
+            <e p="Lobby.cs" t="Include" />
+          </e>
+        </e>
         <e p="scripts" t="Include">
           <e p="Appearance.cs" t="Include" />
           <e p="Assiette.cs" t="Include" />

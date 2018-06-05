@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/Niveaux/Niveau 5.unity
+- path: Assets/scenes/Menu/Create.unity
   isLoaded: 1
   isActive: 1

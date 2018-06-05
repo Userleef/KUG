@@ -10,6 +10,9 @@ public class Deliver_Command : MonoBehaviour {
 	public RawImage Slot_command_2;
 	public RawImage Slot_command_3;
 	public RawImage Slot_command_4;
+	public AudioSource audio;
+
+	private float time = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -17,8 +20,15 @@ public class Deliver_Command : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+	{
+		time -= Time.deltaTime;
+	}
+	
+	private void OnGUI()
+	{
+		if (time < 0)
+			audio.mute = true;
 	}
 	
 	
@@ -43,6 +53,8 @@ public class Deliver_Command : MonoBehaviour {
 	public void Deliver()
 	{
 		Debug.Log("Deliver_command");
+		audio.mute = false;
+		time = 0.7f;
 		
 		List<string> recette_assiette = gameObject.GetComponent<Is_food_on>().food_on.GetComponent<Assiette>().recette_inside;
 

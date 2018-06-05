@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class Generate_Command : MonoBehaviour
+public class Generate_Command : NetworkBehaviour
 {
 	public Camera MainCamera;
 		
@@ -38,6 +39,7 @@ public class Generate_Command : MonoBehaviour
 
 	public void Validate_Commande()
 	{
+		
 		MainCamera.GetComponent<Command_Gestion>().Score += 30;
 		MainCamera.GetComponent<Command_Gestion>().Update_Score();
 		kill_command();

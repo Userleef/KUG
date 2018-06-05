@@ -1277,6 +1277,7 @@ MonoBehaviour:
   Slot_command_2: {fileID: 0}
   Slot_command_3: {fileID: 0}
   Slot_command_4: {fileID: 0}
+  audio: {fileID: 82333487989990802, guid: 8ee47e8715c2a2a4caf5ee74b82f430a, type: 2}
 --- !u!136 &136245907687571452
 CapsuleCollider:
   m_ObjectHideFlags: 1

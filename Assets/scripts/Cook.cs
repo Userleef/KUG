@@ -18,7 +18,8 @@ public class Cook : Photon.MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
+		if (marmitte != null && marmitte.name == "Stove" && !marmitte.GetComponent<Stove>().have_food)
+			audio.mute = true;
 	}
 
 	public void Add_aliment(GameObject al)
@@ -55,7 +56,7 @@ public class Cook : Photon.MonoBehaviour
 	{
 		if (marmitte.name == "Casserole")
 			marmitte.GetComponent<Cooking_Pot>().On_Cooking_Place = true;
-		if (marmitte.name == "Stove")
+		else if (marmitte.name == "Stove")
 		{
 			marmitte.GetComponent<Stove>().On_Cooking_Place = true;
 			audio.mute = false;

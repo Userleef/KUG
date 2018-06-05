@@ -416,6 +416,7 @@ MonoBehaviour:
   platImage: {fileID: 1108873651}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}
@@ -989,6 +990,11 @@ Prefab:
       propertyPath: Slot_command_4
       value: 
       objectReference: {fileID: 1149897833}
+    - target: {fileID: 114832304979597610, guid: 478f3eee0d2c96a4eab1ea1218dd141d,
+        type: 2}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1234297597}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 478f3eee0d2c96a4eab1ea1218dd141d, type: 2}
   m_IsPrefabParent: 0
@@ -3456,6 +3462,7 @@ MonoBehaviour:
   platImage: {fileID: 2137813050}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}
@@ -5403,6 +5410,7 @@ MonoBehaviour:
   platImage: {fileID: 757930482}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}
@@ -6475,6 +6483,7 @@ MonoBehaviour:
   platImage: {fileID: 133960641}
   platfullcarotte: {fileID: 2800000, guid: c34d3318f9a107543b8e25929744617f, type: 3}
   platfulltomate: {fileID: 2800000, guid: 79b330daf444a214eba31e3d88c9cebd, type: 3}
+  platfulloignon: {fileID: 0}
   platcarottes2tomate: {fileID: 2800000, guid: 43d277213e4a4d8448fcd880094e92b7, type: 3}
   plattomates2carottes: {fileID: 2800000, guid: 035082a8afd65c8429cf1b2d248483ce,
     type: 3}
@@ -6869,6 +6878,131 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1228415057}
+--- !u!1 &1234297594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1654231450018852, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1234297595}
+  - component: {fileID: 1234297597}
+  - component: {fileID: 1234297596}
+  m_Layer: 0
+  m_Name: Musique
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234297595
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4855270457786408, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234297594}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.247328, y: -2.6914816, z: -9.325644}
+  m_LocalScale: {x: 1.0000006, y: 1, z: 1.0000006}
+  m_Children: []
+  m_Father: {fileID: 1605929545}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1234297596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114700110410992924, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234297594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1234297597
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 82333487989990802, guid: c7f7b18cbcf81e64281576ce7f0634b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234297594}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: db416894afdd58845b9e70aa37ffa1e4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 1
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &1278180355
 Prefab:
   m_ObjectHideFlags: 0

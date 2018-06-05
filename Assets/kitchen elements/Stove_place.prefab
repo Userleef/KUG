@@ -1256,8 +1256,8 @@ MonoBehaviour:
   timeBarGreen: {fileID: 114117218849675344}
   timeBarRed: {fileID: 114813178419858462}
   steak_cuit: {fileID: 2100000, guid: 1736227c3f4527342bc718db7347554a, type: 2}
-  fish_cuit: {fileID: 0}
-  fish_crame: {fileID: 0}
+  fish_cuit: {fileID: 2100000, guid: 810331de4f6fada4a8a3a3bb81a9505f, type: 2}
+  fish_crame: {fileID: 2100000, guid: e5ef89f7c68014b4693e0c21b6712086, type: 2}
   Is_ready: 0
   ps: {fileID: 198129656494710402}
 --- !u!135 &135696598534859054

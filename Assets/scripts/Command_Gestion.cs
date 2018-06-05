@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class Command_Gestion : MonoBehaviour
+public class Command_Gestion : NetworkBehaviour
 {
 	public Text Display_Score;
-	public int Score = 0;
+	
+	[SyncVar]
+	public int Score;
 
 	public RawImage Slot_command_1;
 	public RawImage Slot_command_2;
