@@ -28,7 +28,10 @@ public class Deliver_Command : MonoBehaviour {
 	private void OnGUI()
 	{
 		if (time < 0)
+		{
 			audio.mute = true;
+		}
+
 	}
 	
 	

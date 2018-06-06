@@ -95,7 +95,7 @@ public class Command_Gestion : NetworkBehaviour
 
 	public void Update_Score()
 	{
-		Display_Score.GetComponent<Text>().text = "Score : " + Score + " $";
+		Display_Score.GetComponent<Text>().text = "Score : " + PhotonNetwork.masterClient.GetScore() + " $";
 	}
 	
 	private void OnGUI()

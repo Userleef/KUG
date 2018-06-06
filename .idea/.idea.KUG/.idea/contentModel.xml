@@ -135,7 +135,71 @@
         </e>
         <e p="scenes" t="Include">
           <e p="Menu" t="Include">
-            <e p="Lobby.cs" t="Include" />
+            <e p="Lobby Copié" t="Include">
+              <e p="scripts" t="Include">
+                <e p="CreateRoom" t="Include">
+                  <e p="CreateRoom.cs" t="Include" />
+                </e>
+                <e p="CurrentRoom" t="Include">
+                  <e p="CurrentRoomCanvas.cs" t="Include" />
+                  <e p="PlayerLayoutGroup.cs" t="Include" />
+                  <e p="PlayerListing.cs" t="Include" />
+                </e>
+                <e p="Extra" t="Include">
+                  <e p="AnimatorTransformView" t="Include">
+                    <e p="UnityChan" t="Include">
+                      <e p="license.txt" t="Include" />
+                      <e p="Models" t="Include">
+                        <e p="UnityChanShader" t="Include">
+                          <e p="Shader" t="Include">
+                            <e p="Unitychan_chara_akarami_blend.shader" t="Include" />
+                            <e p="Unitychan_chara_eye.shader" t="Include" />
+                            <e p="Unitychan_chara_eye_blend.shader" t="Include" />
+                            <e p="Unitychan_chara_eyelash_blend.shader" t="Include" />
+                            <e p="Unitychan_chara_fuku.shader" t="Include" />
+                            <e p="Unitychan_chara_fuku_ds.shader" t="Include" />
+                            <e p="Unitychan_chara_hada.shader" t="Include" />
+                            <e p="Unitychan_chara_hada_blend.shader" t="Include" />
+                            <e p="Unitychan_chara_hair.shader" t="Include" />
+                            <e p="Unitychan_chara_hair_ds.shader" t="Include" />
+                          </e>
+                        </e>
+                      </e>
+                      <e p="scripts" t="Include">
+                        <e p="CameraController.cs" t="Include" />
+                        <e p="FaceUpdate.cs" t="Include" />
+                        <e p="IdleChanger.cs" t="Include" />
+                        <e p="SceneLoader.cs" t="Include" />
+                        <e p="ThirdPersonCamera.cs" t="Include" />
+                        <e p="UnityChanControlScriptWithRgidBody.cs" t="Include" />
+                      </e>
+                      <e p="Stage" t="Include">
+                        <e p="Shader" t="Include">
+                          <e p="AlphaMask.shader" t="Include" />
+                        </e>
+                      </e>
+                    </e>
+                  </e>
+                  <e p="LeaveCurrentMatch.cs" t="Include" />
+                </e>
+                <e p="Generic" t="Include">
+                  <e p="DDOL.cs" t="Include" />
+                </e>
+                <e p="Lobby" t="Include">
+                  <e p="LobbyCanvas.cs" t="Include" />
+                  <e p="RoomLayoutGroup.cs" t="Include" />
+                  <e p="RoomListing.cs" t="Include" />
+                </e>
+                <e p="MainCanvasManager.cs" t="Include" />
+                <e p="Networks" t="Include">
+                  <e p="LobbyNetwork.cs" t="Include" />
+                  <e p="PlayerNetwork.cs" t="Include" />
+                </e>
+                <e p="PlayerManagement.cs" t="Include" />
+                <e p="PlayerMovement.cs" t="Include" />
+                <e p="ToxicArea.cs" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
         <e p="scripts" t="Include">

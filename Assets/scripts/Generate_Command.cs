@@ -35,12 +35,14 @@ public class Generate_Command : NetworkBehaviour
 	void Update () {
 		if(Timer_Command > 0)
 			Timer_Command -= Time.deltaTime;
+		
+		MainCamera.GetComponent<Command_Gestion>().Update_Score();
 	}
 
 	public void Validate_Commande()
 	{
 		
-		MainCamera.GetComponent<Command_Gestion>().Score += 30;
+		PhotonNetwork.masterClient.AddScore(30);
 		MainCamera.GetComponent<Command_Gestion>().Update_Score();
 		kill_command();
 	}
@@ -61,9 +63,9 @@ public class Generate_Command : NetworkBehaviour
 		}
 		else
 		{
-			if (MainCamera.GetComponent<Command_Gestion>().Score >= 5)
+			if (PhotonNetwork.masterClient.GetScore() >= 5)
 			{
-				MainCamera.GetComponent<Command_Gestion>().Score -= 10;
+				PhotonNetwork.masterClient.SetScore(-10);
 				MainCamera.GetComponent<Command_Gestion>().Update_Score();
 			}
 			kill_command();
@@ -92,6 +94,7 @@ public class Generate_Command : NetworkBehaviour
 
 	public void generate_Command(List<Texture> Ingr, List<Texture> Ingr_Spe)
 	{
+		
 		Timer_Command = Intervalle;
 		
 		int i =  Random.Range(0,2);

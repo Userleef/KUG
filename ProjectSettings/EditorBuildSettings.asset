@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/scenes/Menu/menu_niveau.unity
     guid: 3338c9bd737c2ca4dbc607b94998e6e2
   - enabled: 1
+    path: "Assets/scenes/Menu/Lobby Copi\xE9/Scenes/Main.unity"
+    guid: 843bc8a9a52cf6b45b8025a66129f238
+  - enabled: 1
     path: Assets/scenes/Menu/menu_level.unity
     guid: 8cd84933910a26c4488d6bd50f8551f6
   - enabled: 1
@@ -45,17 +48,17 @@ EditorBuildSettings:
     path: Assets/scenes/Story/d_2.unity
     guid: d5e91c399325bb84aa7189dde5a766e3
   - enabled: 1
-    path: Assets/scenes/Story/d_3.unity
-    guid: 206a2c7546a299f42a771bb31422151a
-  - enabled: 1
-    path: Assets/scenes/Story/d_4.unity
-    guid: 770496bcea021164bbe274c956428c8f
-  - enabled: 1
     path: Assets/scenes/Niveaux/Niveau 1.unity
     guid: 40885fecbdf33aa4c9a44d1cc752860a
   - enabled: 1
     path: Assets/scenes/Niveaux/Niveau 2.unity
     guid: 8d1ac26bf277b4041bcf976acab9a91e
+  - enabled: 1
+    path: Assets/scenes/Story/d_3.unity
+    guid: 206a2c7546a299f42a771bb31422151a
+  - enabled: 1
+    path: Assets/scenes/Menu/truc.unity
+    guid: cde4240323dd0be48a31e64dba9b5fc1
   - enabled: 1
     path: Assets/scenes/Niveaux/Niveau 3.unity
     guid: 5de8cd775572f9a4fbb2e38f12e68e7e
@@ -90,8 +93,8 @@ EditorBuildSettings:
     path: Assets/scenes/Story/5.unity
     guid: 11971db45cfec364caecb323271c995b
   - enabled: 1
+    path: Assets/scenes/Menu/Create.unity
+    guid: 1e65fddf92a4629489c434f39855feb2
+  - enabled: 1
     path: Assets/scenes/Story/6.unity
     guid: 712c2eb4e8f64a44da8f891914125420
-  - enabled: 1
-    path: Assets/scenes/Menu/Lobby.unity
-    guid: 105e1b081b1e56441a63151f9b572595

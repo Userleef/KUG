@@ -9,9 +9,12 @@ public class Appearance : Photon.MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		PhotonNetwork.ConnectUsingSettings("0.1");
-		PhotonNetwork.offlineMode = false;
+		//PhotonNetwork.ConnectUsingSettings("0.1");
+		//PhotonNetwork.offlineMode = false;
+		//GameObject p = PhotonNetwork.Instantiate("gododo", spawn_position + Vector3.up * 0.1f, Quaternion.identity, 0);
+		//p.GetComponent<Controller>().enabled = true;
 	}
+	/*
 	
 	// Update is called once per frame
 	//void Update ()
@@ -37,5 +40,5 @@ public class Appearance : Photon.MonoBehaviour
 	{
 		Debug.Log("Random join failed");
 		PhotonNetwork.CreateRoom("room");
-	}
+	}*/
 }

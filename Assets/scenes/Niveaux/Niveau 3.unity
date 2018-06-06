@@ -2982,12 +2982,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1411217393}
-        m_MethodName: PLAY
-        m_Mode: 5
+        m_MethodName: play
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: menu_niveau
           m_BoolArgument: 0
@@ -5123,17 +5123,17 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1004421312}
   m_LocalRotation: {x: -0.014465272, y: -0, z: -0, w: 0.9998954}
-  m_LocalPosition: {x: 0, y: 0, z: -57.146782}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.24974269, y: 1.0001243, z: 1.0001243}
   m_Children:
   - {fileID: 1949519494}
   m_Father: {fileID: 445928554}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323.4284, y: -3.7933779}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.21237552, y: 0.5607914}
+  m_AnchorMax: {x: 0.26587343, y: 0.67619425}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 121, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004421314
 MonoBehaviour:
@@ -6593,12 +6593,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1411217393}
-        m_MethodName: PLAY
-        m_Mode: 5
+        m_MethodName: play
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: menu_fr
           m_BoolArgument: 0
@@ -9158,10 +9158,10 @@ RectTransform:
   m_Father: {fileID: 1004421313}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.0000019073486}
-  m_SizeDelta: {x: 100, y: 0}
+  m_SizeDelta: {x: -60, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949519495
 MonoBehaviour:

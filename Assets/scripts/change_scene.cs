@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class change_scene : MonoBehaviour
 {
-    public void PLAY(string name)
+    public void play(int n)
     {
-        if(name[0] == 'm')
-            PhotonNetwork.Disconnect ();
-        SceneManager.LoadScene(name);
+        //if(name[0] == 'm')
+            //PhotonNetwork.Disconnect ();
+        //SceneManager.LoadScene(name);
+        PhotonNetwork.LoadLevel(n);
     }
+    
     public void exit()
     {
         Application.Quit();
