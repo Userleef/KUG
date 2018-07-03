@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/Niveaux/Niveau 8.unity
+- path: Assets/scenes/Menu/menu_level.unity
   isLoaded: 1
   isActive: 1

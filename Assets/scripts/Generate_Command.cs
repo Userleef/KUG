@@ -65,7 +65,7 @@ public class Generate_Command : NetworkBehaviour
 		{
 			if (PhotonNetwork.masterClient.GetScore() >= 5)
 			{
-				PhotonNetwork.masterClient.SetScore(-10);
+				PhotonNetwork.masterClient.SetScore(PhotonNetwork.masterClient.GetScore()-10);
 				MainCamera.GetComponent<Command_Gestion>().Update_Score();
 			}
 			kill_command();

@@ -16,7 +16,6 @@ public class PAUSE : MonoBehaviour
 		}
 		else {
 			menuObject.gameObject.SetActive(false);
-			Cursor.visible = false;
 			Time.timeScale = 1;
 		}
 
@@ -29,5 +28,6 @@ public class PAUSE : MonoBehaviour
 	public void RESUME_Button()
 	{
 		isActive = !isActive;
+		Cursor.visible = false;
 	}
 }

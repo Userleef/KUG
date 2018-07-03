@@ -34,7 +34,8 @@ public class Display_Star : MonoBehaviour
 
 	public void display_star()
 	{
-		int score = MainCamera.GetComponent<Command_Gestion>().Score;
+		//int score = MainCamera.GetComponent<Command_Gestion>().Score;
+		int score = PhotonNetwork.masterClient.GetScore();
 
 		if (score >= palier1)
 		{
